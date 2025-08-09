@@ -1,0 +1,35 @@
+@use "variables";
+
+@mixin logo-styles() {
+  cursor: pointer;
+  width: 130px;
+  svg {
+    transition: opacity .3s ease-in;
+  }
+
+  &:hover {
+    svg {
+      opacity: 80%;
+    }
+  }
+}
+
+@mixin footer-nav-title-styles() {
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: variables.$white-color;
+}
+
+@mixin button-styles($bg: variables.$gradient-color, $txtC: variables.$white-color, $width: 201px) {
+  border-radius: 4px;
+  background-image: $bg;
+  cursor: pointer;
+  color: $txtC;
+  font-weight: 700;
+  box-sizing: border-box;
+  padding: 15px 20px;
+  border: 1px solid transparent;
+  background-clip: border-box;
+  width: 201px;
+}

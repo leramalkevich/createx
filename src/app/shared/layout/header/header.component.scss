@@ -1,0 +1,70 @@
+@use "../../../../assets/styles/variables";
+@use "../../../../assets/styles/mixins";
+.header {
+  padding: 20px 0;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header-navigation {
+      display: flex;
+      align-items: center;
+      .logo {
+        @include mixins.logo-styles();
+      }
+      .menu {
+        margin-left: 60px;
+        ul {
+          display: flex;
+          align-items: center;
+          list-style: none;
+          .menu-link {
+            margin-right: 40px;
+            cursor: pointer;
+            &:last-child {
+              margin-right: 0;
+            }
+            a {
+              text-decoration: none;
+              font-weight: 700;
+              font-size: 16px;
+              color: variables.$text-color;
+              opacity: 1;
+              transition: opacity .3s ease-in;
+              &:hover {
+                opacity: 70%;
+              }
+            }
+          }
+        }
+      }
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      .button {
+        @include mixins.button-styles(variables.$gradient-color, variables.$white-color, 207px);
+        margin-right: 20px;
+      }
+      .link {
+        padding: 13px 0 13px 16px;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        box-sizing: border-box;
+        cursor: pointer;
+        transition: opacity .3s ease-in;
+        svg {
+          margin-right: 8px;
+        }
+        span {
+          font-weight: 700;
+        }
+        &:hover {
+          opacity: 70%;
+        }
+      }
+    }
+  }
+}
