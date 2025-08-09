@@ -21,6 +21,23 @@
   color: variables.$white-color;
 }
 
+@mixin bg-color-styles(){
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: variables.$gradient-color;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
+  }
+}
+
 @mixin button-styles($bg: variables.$gradient-color, $txtC: variables.$white-color, $width: 201px) {
   border-radius: 4px;
   background-image: $bg;
@@ -32,4 +49,19 @@
   border: 1px solid transparent;
   background-clip: border-box;
   width: 201px;
+}
+
+@mixin title-styles($size: 46px){
+  font-weight: 900;
+  font-size: $size;
+  letter-spacing: 1px;
+  color: variables.$title-text-color;
+}
+
+@mixin above-title-styles(){
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: variables.$title-text-color;
+  margin-bottom: 8px;
 }

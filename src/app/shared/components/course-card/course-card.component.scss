@@ -1,0 +1,62 @@
+@use "../../../../assets/styles/variables";
+@use "../../../../assets/styles/mixins";
+
+.course-card {
+  width: 600px;
+  height: 214px;
+  border: 1px solid #E5E8ED;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0px 30px 24px -10px #9A9CA50D;
+  display: flex;
+  justify-content: space-between;
+  .course-by-image {
+    width: 214px;
+    height: 214px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .course-description {
+    padding: 32px;
+    //box-sizing: border-box;
+    width: 322px;
+    .course-type {
+      padding: 1px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: variables.$white-color;
+      text-align: center;
+      box-sizing: border-box;
+      //background-color: #03CEA4;
+      max-width: 111px;
+      margin-bottom: 20px;
+    }
+    .course-title {
+      @include mixins.title-styles(20px);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .course-add {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      .price {
+        font-weight: 700;
+        font-size: 18px;
+        color: variables.$danger-color;
+        margin-right: 5px;
+      }
+      .author {
+        //font-weight: 400;
+        font-size: 18px;
+        color: variables.$author-card-color;
+
+      }
+    }
+
+
+  }
+
+
+}

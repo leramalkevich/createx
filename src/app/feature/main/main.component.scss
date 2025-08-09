@@ -1,0 +1,293 @@
+@use "../../../assets/styles/variables";
+@use "../../../assets/styles/mixins";
+
+.main {
+  padding: 80px 0;
+  @include mixins.bg-color-styles();
+  background-image: url("../../../assets/images/main/shapes-1.png"), url("../../../assets/images/main/shapes-2.png"),
+url("../../../assets/images/main/shapes-3.png"), url("../../../assets/images/main/shapes-4.png"), url("../../../assets/images/main/dots.png"),
+url("../../../assets/images/main/circles.png");
+  background-repeat: no-repeat;
+  background-position: left top, calc(40% + 5px) calc(40% + 5px), calc(35% + 5px) calc(75% + 5px), right calc(0% - 5px), right calc(75% + 5px), left bottom;
+
+  .container {
+    .main-block {
+      background-image: url("../../../assets/images/main/illustration.png");
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: contain;
+      padding-top: 40px;
+      margin-bottom: 189px;
+
+      .main-block-text {
+        max-width: 500px;
+        .play-block {
+          display: flex;
+          align-items: center;
+          margin-bottom: 40px;
+
+          .play-button {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: variables.$primary-color;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            &::before {
+              content: "";
+              position: absolute;
+              border-radius: 50%;
+              opacity: 12%;
+              top: -16px;
+              left: -16px;
+              transform: scale(0);
+            }
+            &:hover {
+              animation: pulse 1s infinite;
+              &::before {
+                width: 84px;
+                height: 84px;
+                background-color: variables.$primary-color;
+                transform: scale(1);
+              }
+            }
+          }
+          .play-description {
+            margin-left: 16px;
+            font-weight: 700;
+            font-size: 14px;
+            color: variables.$title-text-color;
+          }
+        }
+        .main-title {
+          @include mixins.title-styles(64px);
+          margin-bottom: 60px;
+        }
+        .actions {
+          display: flex;
+          align-items: center;
+          padding-bottom: 70px;
+          .button {
+            @include mixins.button-styles(variables.$gradient-color, variables.$white-color, 201px);
+            &.transparent {
+              margin-right: 24px;
+              width: 148px;
+            }
+          }
+        }
+      }
+    }
+    .pros-items {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .pros-item {
+        display: flex;
+        align-items: center;
+        .pros-item-number {
+          @include mixins.title-styles(46px);
+          margin-right: 12px;
+        }
+        .pros-item-text {
+          color: variables.$title-text-color;
+        }
+      }
+      .circle {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: variables.$primary-color;
+      }
+    }
+  }
+}
+
+.about-us {
+  padding: 180px 0;
+  background-image: url("../../../assets/images/main/dots-yellow.png"), url("../../../assets/images/main/circles-yellow.png");
+  background-repeat: no-repeat;
+  background-position: left calc(35% + 5px), right calc(75% - 25px);
+  .container {
+    background-image: url("../../../assets/images/main/image-bg-1.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: flex-end;
+
+    .about-us-text-block {
+      max-width: 390px;
+      .about-us-above-title {
+        @include mixins.above-title-styles();
+      }
+      .about-us-title {
+        @include mixins.title-styles(46px);
+        margin-bottom: 40px;
+      }
+      .about-us-items {
+        margin-bottom: 48px;
+        .about-us-item {
+          list-style: none;
+          margin-bottom: 12px;
+          display: flex;
+          align-items: flex-start;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          svg {
+            margin-right: 16px;
+            margin-top: 2px;
+            width: 16px;
+            height: 16px;
+          }
+          div {
+            max-width: 358px;
+          }
+        }
+      }
+      .actions {
+        display: flex;
+        text-align: center;
+        width: 161px;
+        padding-bottom: 26px;
+        .button {
+          @include mixins.button-styles(variables.$gradient-color, variables.$white-color, 161px);
+          text-decoration: none;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.courses {
+  padding-bottom: 180px;
+  .container {
+    .courses-block-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 60px;
+      .titles {
+        .above-title {
+          @include mixins.above-title-styles();
+        }
+        .title {
+          @include mixins.title-styles(46px);
+        }
+      }
+      .actions {
+        display: flex;
+        text-align: center;
+
+        .button {
+          @include mixins.button-styles(variables.$gradient-color, variables.$white-color, 203px);
+          text-decoration: none;
+        }
+      }
+    }
+    .courses-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+  }
+}
+
+.benefits {
+  padding-bottom: 120px;
+  .container {
+    text-align: center;
+    .benefits-above-title {
+      @include mixins.above-title-styles();
+    }
+    .benefits-title {
+      @include mixins.title-styles(46px);
+      margin-bottom: 60px;
+    }
+    .benefits-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 60px;
+      .button {
+        &.transparent {
+          &.with-svg {
+            width: 307px;
+            box-sizing: border-box;
+            border: 1px solid transparent;
+            color: variables.$gray-button-color;
+            font-weight: 700;
+            font-size: 16px;
+            font-family: Lato, sans-serif;
+            text-align: center;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all .3s ease-in;
+            svg {
+              margin-right: 8px;
+              path {
+                transition: fill .3s ease-in;
+                fill: variables.$gray-button-color;
+              }
+            }
+
+            &.active, &:hover {
+              border: 1px solid variables.$primary-color;
+              color: variables.$primary-color;
+              svg {
+                path {
+                  fill: variables.$primary-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .advantage-block {
+      background-image: url("../../../assets/images/main/illustration-benefit-1.png");
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: contain;
+
+      .advantage-text-block {
+        max-width: 495px;
+        padding: 122px 0;
+        text-align: left;
+        .advantage-title {
+          @include mixins.title-styles(32px);
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+}
+
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
