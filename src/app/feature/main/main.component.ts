@@ -14,10 +14,11 @@ import {ReviewsType} from '../../../types/reviews.type';
 import {BlogPostCardComponent} from '../../shared/components/blog-post-card/blog-post-card.component';
 import {PostsService} from '../../shared/services/posts.service';
 import {PostType} from '../../../types/post.type';
+import {SubscribeComponent} from '../../shared/components/subscribe/subscribe.component';
 
 @Component({
   selector: 'app-main',
-  imports: [RouterLink, CommonModule, CourseCardComponent, CarouselModule, TeamMemberCardComponent, BlogPostCardComponent],
+  imports: [RouterLink, CommonModule, CourseCardComponent, CarouselModule, TeamMemberCardComponent, BlogPostCardComponent, SubscribeComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
