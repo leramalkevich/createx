@@ -1,0 +1,70 @@
+@use "../../../../assets/styles/variables";
+@use "../../../../assets/styles/mixins";
+
+.team-member-card {
+  width: 285px;
+  .team-member-image {
+    background-color: variables.$secondary-color;
+    height: 340px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    position: relative;
+    transition: all .3s ease-in;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+    }
+    &:hover {
+      &::before {
+        background: linear-gradient(180deg, rgba(30, 33, 44, 0) 43.9%, rgba(30, 33, 44, 0.03) 55.21%, rgba(30, 33, 44, 0.33) 68.73%, rgba(30, 33, 44, 0.56) 76.17%, rgba(30, 33, 44, 0.768225) 83.75%, rgba(30, 33, 44, 0.92) 91.49%, #1E212C 100%);
+
+      }
+      .team-member-socials {
+        display: flex;
+        .social-link {
+          &:hover {
+            svg g {
+              opacity: 100%;
+            }
+          }
+        }
+
+      }
+    }
+    .team-member-socials {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      align-items: flex-end;
+      .social-link {
+        cursor: pointer;
+        margin-right: 12px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  .team-member-text {
+    margin-top: 16px;
+    text-align: center;
+    .team-member-title {
+      font-weight: 700;
+      font-size: 20px;
+      color: variables.$text-color;
+      margin-bottom: 4px;
+    }
+    .team-member-job {
+      color: variables.$author-card-color;
+    }
+  }
+}

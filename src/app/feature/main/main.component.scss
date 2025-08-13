@@ -275,7 +275,154 @@ url("../../../assets/images/main/circles.png");
   }
 }
 
+.events {
+  @include mixins.bg-color-styles();
+  background-image: url("../../../assets/images/main/dots-events.png"), url("../../../assets/images/main/circles-events.png");
+  background-repeat: no-repeat;
+  background-position: left bottom, right top;
+  padding: 80px 0;
+  .container {
+    text-align: center;
+    .events-above-title {
+      @include mixins.above-title-styles();
+    }
+    .events-title {
+      @include mixins.title-styles(46px);
+      margin-bottom: 60px;
+    }
+    .events-items {
+      margin-bottom: 60px;
 
+    }
+    .events-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .actions-text {
+        font-weight: 700;
+        font-size: 28px;
+        color: variables.$title-text-color;
+        margin-right: 40px;
+      }
+      .button {
+        @include mixins.button-styles(variables.$gradient-color, variables.$white-color, 215px);
+        width: 215px;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.certificate {
+  padding-top: 120px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, variables.$white-color, variables.$white-color 75%, variables.$gray-bg-color 25%, variables.$gray-bg-color);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+  .container {
+    min-height: 500px;
+    background-image: url("../../../assets/images/main/certifiacte-image.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+
+    .certificate-description {
+      max-width: 397px;
+      .certificate-description-above-title {
+        @include mixins.above-title-styles();
+      }
+      .certificate-description-title {
+        @include  mixins.title-styles(46px);
+        margin-bottom: 48px;
+      }
+      .certificate-description-text {
+        margin-bottom: 32px;
+      }
+      .certificate-description-logos {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 166px;
+        .certificate-description-logo {
+          width: 105px;
+          img {
+            width: 100%;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.carousels {
+  background-color: variables.$gray-bg-color;
+  background-image: url("../../../assets/images/main/vector-carousels.png"), url("../../../assets/images/main/dots-carousels.png"),
+  url("../../../assets/images/main/shapes-carousels.png"), url("../../../assets/images/main/circles-carousels.png"), url("../../../assets/images/main/dots-carousels.png"),
+  url("../../../assets/images/main/circles-carousels-2.png");
+  background-repeat: no-repeat;
+  background-position: left, right top, right center, left center, left bottom, right bottom;
+  padding-top: 120px;
+  padding-bottom: 100px;
+  .container {
+    .our-team {
+      margin-bottom: 180px;
+      .our-team-carousel-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 60px;
+        .our-team-carousel-header-text {
+          .above-title {
+            @include mixins.above-title-styles();
+          }
+          .title {
+            @include mixins.title-styles(46px);
+          }
+        }
+        .our-team-carousel-header-actions {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .move {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background-color: transparent;
+            transition: background-color .3s ease-in;
+            svg path {
+              transition: all .2s ease-in;
+              fill: variables.$text-color;
+            }
+            &:hover {
+              background-color: variables.$primary-color;
+              svg path {
+                fill: variables.$white-color;
+              }
+            }
+          }
+        }
+      }
+    }
+    .reviews {
+
+    }
+  }
+
+}
 
 @keyframes pulse {
   0% {
