@@ -1,0 +1,22 @@
+@use "../../../assets/styles/mixins";
+.courses {
+  padding-top: 60px;
+  padding-bottom: 120px;
+  .container {
+    text-align: center;
+    .above-title {
+      @include mixins.above-title-styles();
+    }
+    .title {
+      @include mixins.title-styles(46px);
+      margin-bottom: 60px;
+    }
+    .courses-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+  }
+}

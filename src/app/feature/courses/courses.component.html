@@ -1,0 +1,14 @@
+<section class="courses">
+  <div class="container">
+    <div class="above-title">Enjoy your studying!</div>
+    <div class="title">Our online courses</div>
+    <div class="courses-items" *ngIf="courses">
+      <div class="course-item" *ngFor="let course of courses">
+          <course-card [course]="course"></course-card>
+      </div>
+    </div>
+  </div>
+</section>
+<reviews></reviews>
+<certificate></certificate>
+<subscribe></subscribe>

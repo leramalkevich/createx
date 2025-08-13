@@ -359,81 +359,15 @@
   }
 }
 
-.certificate {
-  padding-top: 120px;
-  position: relative;
-  background-image: url("../../../assets/images/main/vector-carousels.png"), url("../../../assets/images/main/dots-carousels.png");
-  background-repeat: no-repeat;
-  background-position: calc(5% + 5px) bottom, calc(75% - 25px) bottom;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to bottom, variables.$white-color, variables.$white-color 75%, variables.$gray-bg-color 25%, variables.$gray-bg-color);
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-  }
-
-  .container {
-    min-height: 500px;
-    background-image: url("../../../assets/images/main/certifiacte-image.png");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: contain;
-
-    .certificate-description {
-      max-width: 397px;
-
-      .certificate-description-above-title {
-        @include mixins.above-title-styles();
-      }
-
-      .certificate-description-title {
-        @include mixins.title-styles(46px);
-        margin-bottom: 48px;
-      }
-
-      .certificate-description-text {
-        margin-bottom: 32px;
-      }
-
-      .certificate-description-logos {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-bottom: 166px;
-
-        .certificate-description-logo {
-          width: 105px;
-
-          img {
-            width: 100%;
-          }
-        }
-      }
-
-    }
-  }
-}
-
 .carousels {
   background-color: variables.$gray-bg-color;
-  background-image: url("../../../assets/images/main/shapes-carousels.png"), url("../../../assets/images/main/circles-carousels.png"),
-  url("../../../assets/images/main/dots-carousels.png"), url("../../../assets/images/main/circles-carousels-2.png");
+  background-image: url("../../../assets/images/main/shapes-carousels.png");
   background-repeat: no-repeat;
-  background-position: right calc(40% - 65px), calc(1% + 5px) calc(55% + 55px), calc(10% + 45px) calc(99% - 75px), right bottom;
-  padding-top: 100px;
-  padding-bottom: 160px;
+  background-position: right calc(75% - 65px);
+  padding-bottom: 100px;
 
   .container {
     .our-team {
-      margin-bottom: 180px;
-
       .our-team-carousel-header {
         display: flex;
         justify-content: space-between;
@@ -457,47 +391,6 @@
 
           .move {
             @include mixins.button-circle-styles();
-          }
-        }
-      }
-    }
-
-    .reviews {
-      background-image: url("../../../assets/images/main/shapes-reviews.png");
-      background-repeat: no-repeat;
-      background-position: calc(52% + 250px) calc(5% - 0px);
-
-      .reviews-carousel-header {
-        text-align: center;
-        margin-bottom: 60px;
-
-        .above-title {
-          @include mixins.above-title-styles();
-        }
-
-        .title {
-          @include mixins.title-styles(46px);
-        }
-      }
-
-      .reviews-carousel {
-        position: relative;
-
-        .move {
-          @include mixins.button-circle-styles();
-
-          &.move-backwards, &.move-forward {
-            position: absolute;
-            top: 45%;
-            z-index: 55;
-          }
-
-          &.move-forward {
-            right: 0;
-          }
-
-          &.move-backwards {
-            left: 0;
           }
         }
       }

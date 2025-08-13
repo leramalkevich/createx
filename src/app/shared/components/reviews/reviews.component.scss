@@ -1,0 +1,46 @@
+@use "../../../../assets/styles/mixins";
+@use "../../../../assets/styles/variables";
+.reviews {
+  background-image: url("../../../../assets/images/main/shapes-reviews.png"), url("../../../../assets/images/main/circles-carousels.png"),
+  url("../../../../assets/images/main/dots-carousels.png"), url("../../../../assets/images/main/circles-carousels-2.png");
+  background-repeat: no-repeat;
+  background-position: calc(50% + 270px) calc(13% + 20px), calc(3% + 5px) calc(7% + 5px), calc(11% + 25px) calc(90% - 30px), right bottom;
+  background-color: variables.$gray-bg-color;
+  padding-top: 80px;
+  padding-bottom: 160px;
+
+  .reviews-carousel-header {
+    text-align: center;
+    margin-bottom: 60px;
+
+    .above-title {
+      @include mixins.above-title-styles();
+    }
+
+    .title {
+      @include mixins.title-styles(46px);
+    }
+  }
+
+  .reviews-carousel {
+    position: relative;
+
+    .move {
+      @include mixins.button-circle-styles();
+
+      &.move-backwards, &.move-forward {
+        position: absolute;
+        top: 45%;
+        z-index: 55;
+      }
+
+      &.move-forward {
+        right: 0;
+      }
+
+      &.move-backwards {
+        left: 0;
+      }
+    }
+  }
+}

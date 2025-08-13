@@ -114,6 +114,5 @@ export class CoursesService {
   }
 
   courses = signal(this.getCourses());
-
   constructor() { }
 }
