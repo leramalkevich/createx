@@ -48,7 +48,8 @@
   padding: 15px 20px;
   border: 1px solid transparent;
   background-clip: border-box;
-  width: 201px;
+  width: $width;
+  text-decoration: none;
 }
 
 @mixin button-circle-styles() {

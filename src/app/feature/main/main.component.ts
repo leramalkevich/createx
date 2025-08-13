@@ -11,10 +11,13 @@ import {TeamService} from '../../shared/services/team.service';
 import {TeamMemberType} from '../../../types/team-member.type';
 import {ReviewsService} from '../../shared/services/reviews.service';
 import {ReviewsType} from '../../../types/reviews.type';
+import {BlogPostCardComponent} from '../../shared/components/blog-post-card/blog-post-card.component';
+import {PostsService} from '../../shared/services/posts.service';
+import {PostType} from '../../../types/post.type';
 
 @Component({
   selector: 'app-main',
-  imports: [RouterLink, CommonModule, CourseCardComponent, CarouselModule, TeamMemberCardComponent],
+  imports: [RouterLink, CommonModule, CourseCardComponent, CarouselModule, TeamMemberCardComponent, BlogPostCardComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
@@ -22,6 +25,7 @@ export class MainComponent implements OnInit {
   courses: CourseType[] = [];
   team: TeamMemberType[] = [];
   reviews:ReviewsType[]=[];
+  blogPosts:PostType[]=[];
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -60,21 +64,12 @@ export class MainComponent implements OnInit {
       0: {
         items: 1
       },
-      // 400: {
-      //   items: 1
-      // },
-      // 740: {
-      //   items: 1
-      // },
-      // 940: {
-      //   items: 1
-      // }
     },
     nav: true
   }
 
   constructor(private headerService: HeaderService, private coursesService: CoursesService, private teamService: TeamService,
-              private reviewsService: ReviewsService) {
+              private reviewsService: ReviewsService, private postsService: PostsService) {
   }
 
   ngOnInit() {
@@ -82,5 +77,6 @@ export class MainComponent implements OnInit {
     this.courses = this.coursesService.getRandomCourses(6);
     this.team = this.teamService.team();
     this.reviews = this.reviewsService.reviews();
+    this.blogPosts = this.postsService.posts();
   }
 }

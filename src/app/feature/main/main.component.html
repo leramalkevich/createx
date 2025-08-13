@@ -369,3 +369,22 @@
   </div>
 </section>
 
+<section class="blog">
+  <div class="container">
+    <div class="blog-header">
+      <div class="blog-header-title">
+        <div class="above-title">Our blog</div>
+        <div class="title">Latest posts</div>
+      </div>
+      <div class="blog-actions">
+        <a routerLink="/blog" class="button">Go to blog</a>
+      </div>
+    </div>
+    <div class="blog-items" *ngIf="blogPosts">
+      <div class="blog-item" *ngFor="let blogPost of blogPosts">
+          <blog-post-card [post]="blogPost"></blog-post-card>
+      </div>
+    </div>
+  </div>
+</section>
+

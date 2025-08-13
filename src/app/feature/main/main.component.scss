@@ -505,7 +505,38 @@
   }
 }
 
-
+.blog {
+  padding-top: 120px;
+  padding-bottom: 180px;
+  .container {
+    .blog-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 60px;
+      .blog-header-title {
+        .above-title {
+          @include mixins.above-title-styles();
+        }
+        .title {
+          @include mixins.title-styles(46px);
+        }
+      }
+      .blog-actions {
+        display: flex;
+        text-align: center;
+        .button {
+          @include mixins.button-styles(variables.$gradient-color, variables.$white-color, 158px);
+        }
+      }
+    }
+    .blog-items {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
 
 
 
