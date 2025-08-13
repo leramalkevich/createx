@@ -5,8 +5,8 @@
   padding: 80px 0;
   @include mixins.bg-color-styles();
   background-image: url("../../../assets/images/main/shapes-1.png"), url("../../../assets/images/main/shapes-2.png"),
-url("../../../assets/images/main/shapes-3.png"), url("../../../assets/images/main/shapes-4.png"), url("../../../assets/images/main/dots.png"),
-url("../../../assets/images/main/circles.png");
+  url("../../../assets/images/main/shapes-3.png"), url("../../../assets/images/main/shapes-4.png"), url("../../../assets/images/main/dots.png"),
+  url("../../../assets/images/main/circles.png");
   background-repeat: no-repeat;
   background-position: left top, calc(40% + 5px) calc(40% + 5px), calc(35% + 5px) calc(75% + 5px), right calc(0% - 5px), right calc(75% + 5px), left bottom;
 
@@ -21,6 +21,7 @@ url("../../../assets/images/main/circles.png");
 
       .main-block-text {
         max-width: 500px;
+
         .play-block {
           display: flex;
           align-items: center;
@@ -37,6 +38,7 @@ url("../../../assets/images/main/circles.png");
             align-items: center;
             justify-content: center;
             position: relative;
+
             &::before {
               content: "";
               position: absolute;
@@ -46,8 +48,10 @@ url("../../../assets/images/main/circles.png");
               left: -16px;
               transform: scale(0);
             }
+
             &:hover {
               animation: pulse 1s infinite;
+
               &::before {
                 width: 84px;
                 height: 84px;
@@ -56,6 +60,7 @@ url("../../../assets/images/main/circles.png");
               }
             }
           }
+
           .play-description {
             margin-left: 16px;
             font-weight: 700;
@@ -63,16 +68,20 @@ url("../../../assets/images/main/circles.png");
             color: variables.$title-text-color;
           }
         }
+
         .main-title {
           @include mixins.title-styles(64px);
           margin-bottom: 60px;
         }
+
         .actions {
           display: flex;
           align-items: center;
           padding-bottom: 70px;
+
           .button {
             @include mixins.button-styles(variables.$gradient-color, variables.$white-color, 201px);
+
             &.transparent {
               margin-right: 24px;
               width: 148px;
@@ -81,21 +90,26 @@ url("../../../assets/images/main/circles.png");
         }
       }
     }
+
     .pros-items {
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       .pros-item {
         display: flex;
         align-items: center;
+
         .pros-item-number {
           @include mixins.title-styles(46px);
           margin-right: 12px;
         }
+
         .pros-item-text {
           color: variables.$title-text-color;
         }
       }
+
       .circle {
         width: 8px;
         height: 8px;
@@ -111,6 +125,7 @@ url("../../../assets/images/main/circles.png");
   background-image: url("../../../assets/images/main/dots-yellow.png"), url("../../../assets/images/main/circles-yellow.png");
   background-repeat: no-repeat;
   background-position: left calc(35% + 5px), right calc(75% - 25px);
+
   .container {
     background-image: url("../../../assets/images/main/image-bg-1.png");
     background-position: left;
@@ -121,39 +136,48 @@ url("../../../assets/images/main/circles.png");
 
     .about-us-text-block {
       max-width: 390px;
+
       .about-us-above-title {
         @include mixins.above-title-styles();
       }
+
       .about-us-title {
         @include mixins.title-styles(46px);
         margin-bottom: 40px;
       }
+
       .about-us-items {
         margin-bottom: 48px;
+
         .about-us-item {
           list-style: none;
           margin-bottom: 12px;
           display: flex;
           align-items: flex-start;
+
           &:last-child {
             margin-bottom: 0;
           }
+
           svg {
             margin-right: 16px;
             margin-top: 2px;
             width: 16px;
             height: 16px;
           }
+
           div {
             max-width: 358px;
           }
         }
       }
+
       .actions {
         display: flex;
         text-align: center;
         width: 161px;
         padding-bottom: 26px;
+
         .button {
           @include mixins.button-styles(variables.$gradient-color, variables.$white-color, 161px);
           text-decoration: none;
@@ -166,20 +190,24 @@ url("../../../assets/images/main/circles.png");
 
 .courses {
   padding-bottom: 180px;
+
   .container {
     .courses-block-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
       margin-bottom: 60px;
+
       .titles {
         .above-title {
           @include mixins.above-title-styles();
         }
+
         .title {
           @include mixins.title-styles(46px);
         }
       }
+
       .actions {
         display: flex;
         text-align: center;
@@ -190,6 +218,7 @@ url("../../../assets/images/main/circles.png");
         }
       }
     }
+
     .courses-items {
       display: flex;
       align-items: center;
@@ -202,20 +231,25 @@ url("../../../assets/images/main/circles.png");
 
 .benefits {
   padding-bottom: 120px;
+
   .container {
     text-align: center;
+
     .benefits-above-title {
       @include mixins.above-title-styles();
     }
+
     .benefits-title {
       @include mixins.title-styles(46px);
       margin-bottom: 60px;
     }
+
     .benefits-actions {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 60px;
+
       .button {
         &.transparent {
           &.with-svg {
@@ -235,8 +269,10 @@ url("../../../assets/images/main/circles.png");
             justify-content: center;
             cursor: pointer;
             transition: all .3s ease-in;
+
             svg {
               margin-right: 8px;
+
               path {
                 transition: fill .3s ease-in;
                 fill: variables.$gray-button-color;
@@ -246,6 +282,7 @@ url("../../../assets/images/main/circles.png");
             &.active, &:hover {
               border: 1px solid variables.$primary-color;
               color: variables.$primary-color;
+
               svg {
                 path {
                   fill: variables.$primary-color;
@@ -256,6 +293,7 @@ url("../../../assets/images/main/circles.png");
         }
       }
     }
+
     .advantage-block {
       background-image: url("../../../assets/images/main/illustration-benefit-1.png");
       background-repeat: no-repeat;
@@ -266,6 +304,7 @@ url("../../../assets/images/main/circles.png");
         max-width: 495px;
         padding: 122px 0;
         text-align: left;
+
         .advantage-title {
           @include mixins.title-styles(32px);
           margin-bottom: 24px;
@@ -281,29 +320,36 @@ url("../../../assets/images/main/circles.png");
   background-repeat: no-repeat;
   background-position: left bottom, right top;
   padding: 80px 0;
+
   .container {
     text-align: center;
+
     .events-above-title {
       @include mixins.above-title-styles();
     }
+
     .events-title {
       @include mixins.title-styles(46px);
       margin-bottom: 60px;
     }
+
     .events-items {
       margin-bottom: 60px;
 
     }
+
     .events-actions {
       display: flex;
       align-items: center;
       justify-content: center;
+
       .actions-text {
         font-weight: 700;
         font-size: 28px;
         color: variables.$title-text-color;
         margin-right: 40px;
       }
+
       .button {
         @include mixins.button-styles(variables.$gradient-color, variables.$white-color, 215px);
         width: 215px;
@@ -316,6 +362,10 @@ url("../../../assets/images/main/circles.png");
 .certificate {
   padding-top: 120px;
   position: relative;
+  background-image: url("../../../assets/images/main/vector-carousels.png"), url("../../../assets/images/main/dots-carousels.png");
+  background-repeat: no-repeat;
+  background-position: calc(5% + 5px) bottom, calc(75% - 25px) bottom;
+
   &::before {
     content: "";
     position: absolute;
@@ -328,6 +378,7 @@ url("../../../assets/images/main/circles.png");
     background-position: center;
     z-index: -1;
   }
+
   .container {
     min-height: 500px;
     background-image: url("../../../assets/images/main/certifiacte-image.png");
@@ -337,23 +388,29 @@ url("../../../assets/images/main/circles.png");
 
     .certificate-description {
       max-width: 397px;
+
       .certificate-description-above-title {
         @include mixins.above-title-styles();
       }
+
       .certificate-description-title {
-        @include  mixins.title-styles(46px);
+        @include mixins.title-styles(46px);
         margin-bottom: 48px;
       }
+
       .certificate-description-text {
         margin-bottom: 32px;
       }
+
       .certificate-description-logos {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding-bottom: 166px;
+
         .certificate-description-logo {
           width: 105px;
+
           img {
             width: 100%;
           }
@@ -366,63 +423,93 @@ url("../../../assets/images/main/circles.png");
 
 .carousels {
   background-color: variables.$gray-bg-color;
-  background-image: url("../../../assets/images/main/vector-carousels.png"), url("../../../assets/images/main/dots-carousels.png"),
-  url("../../../assets/images/main/shapes-carousels.png"), url("../../../assets/images/main/circles-carousels.png"), url("../../../assets/images/main/dots-carousels.png"),
-  url("../../../assets/images/main/circles-carousels-2.png");
+  background-image: url("../../../assets/images/main/shapes-carousels.png"), url("../../../assets/images/main/circles-carousels.png"),
+  url("../../../assets/images/main/dots-carousels.png"), url("../../../assets/images/main/circles-carousels-2.png");
   background-repeat: no-repeat;
-  background-position: left, right top, right center, left center, left bottom, right bottom;
-  padding-top: 120px;
-  padding-bottom: 100px;
+  background-position: right calc(40% - 65px), calc(1% + 5px) calc(55% + 55px), calc(10% + 45px) calc(99% - 75px), right bottom;
+  padding-top: 100px;
+  padding-bottom: 160px;
+
   .container {
     .our-team {
       margin-bottom: 180px;
+
       .our-team-carousel-header {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
         margin-bottom: 60px;
+
         .our-team-carousel-header-text {
           .above-title {
             @include mixins.above-title-styles();
           }
+
           .title {
             @include mixins.title-styles(46px);
           }
         }
+
         .our-team-carousel-header-actions {
           display: flex;
           align-items: center;
           justify-content: space-between;
+
           .move {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            background-color: transparent;
-            transition: background-color .3s ease-in;
-            svg path {
-              transition: all .2s ease-in;
-              fill: variables.$text-color;
-            }
-            &:hover {
-              background-color: variables.$primary-color;
-              svg path {
-                fill: variables.$white-color;
-              }
-            }
+            @include mixins.button-circle-styles();
           }
         }
       }
     }
-    .reviews {
 
+    .reviews {
+      background-image: url("../../../assets/images/main/shapes-reviews.png");
+      background-repeat: no-repeat;
+      background-position: calc(52% + 250px) calc(5% - 0px);
+
+      .reviews-carousel-header {
+        text-align: center;
+        margin-bottom: 60px;
+
+        .above-title {
+          @include mixins.above-title-styles();
+        }
+
+        .title {
+          @include mixins.title-styles(46px);
+        }
+      }
+
+      .reviews-carousel {
+        position: relative;
+
+        .move {
+          @include mixins.button-circle-styles();
+
+          &.move-backwards, &.move-forward {
+            position: absolute;
+            top: 45%;
+            z-index: 55;
+          }
+
+          &.move-forward {
+            right: 0;
+          }
+
+          &.move-backwards {
+            left: 0;
+          }
+        }
+      }
     }
   }
-
 }
+
+
+
+
+
+
 
 @keyframes pulse {
   0% {

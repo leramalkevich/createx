@@ -9,6 +9,8 @@ import {CarouselModule, OwlOptions} from 'ngx-owl-carousel-o';
 import {TeamMemberCardComponent} from '../../shared/components/team-member-card/team-member-card.component';
 import {TeamService} from '../../shared/services/team.service';
 import {TeamMemberType} from '../../../types/team-member.type';
+import {ReviewsService} from '../../shared/services/reviews.service';
+import {ReviewsType} from '../../../types/reviews.type';
 
 @Component({
   selector: 'app-main',
@@ -19,6 +21,7 @@ import {TeamMemberType} from '../../../types/team-member.type';
 export class MainComponent implements OnInit {
   courses: CourseType[] = [];
   team: TeamMemberType[] = [];
+  reviews:ReviewsType[]=[];
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -57,9 +60,9 @@ export class MainComponent implements OnInit {
       0: {
         items: 1
       },
-      400: {
-        items: 2
-      },
+      // 400: {
+      //   items: 1
+      // },
       // 740: {
       //   items: 1
       // },
@@ -70,12 +73,14 @@ export class MainComponent implements OnInit {
     nav: true
   }
 
-  constructor(private headerService: HeaderService, private coursesService: CoursesService, private teamService: TeamService) {
+  constructor(private headerService: HeaderService, private coursesService: CoursesService, private teamService: TeamService,
+              private reviewsService: ReviewsService) {
   }
 
   ngOnInit() {
     this.headerService.whiteBg.set(false);
     this.courses = this.coursesService.getRandomCourses(6);
     this.team = this.teamService.team();
+    this.reviews = this.reviewsService.reviews();
   }
 }

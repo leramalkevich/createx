@@ -19,4 +19,80 @@ body {
   margin: 0 auto;
 }
 
+.reviews-carousel {
+  .owl-carousel {
+    max-width: 1020px;
+    padding: 64px 105px;
+    box-sizing: border-box;
+    background: variables.$white-color;
+    border-radius: 4px;
+    box-shadow: 0px 30px 24px -10px #9A9CA50D;
+    margin: 0 auto;
+    position: relative;
+    .owl-stage-outer {
+      .review-item {
+        display: flex;
+        align-items: flex-start;
+        .quote-mark {
+          margin-right: 30px;
+        }
+        .review-content {
+          max-width: 752px;
+          .review-text {
+            font-size: 20px;
+            margin-bottom: 24px;
+          }
+          .user-profile {
+            display: flex;
+            align-items: center;
+            .user-image {
+              width: 72px;
+              height: 72px;
+              border-radius: 50%;
+              margin-right: 20px;
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: contain;
+            }
+            .user-info {
+              .user-name {
+                font-weight: 700;
+                color: variables.$title-text-color;
+                margin-bottom: 4px;
+              }
+              .user-add {
+                font-size: 14px;
+                color: variables.$author-card-color;
+              }
+            }
+          }
+        }
+      }
+    }
+    .owl-nav {
+      display: none;
+    }
+    .owl-dots {
+      position: absolute;
+      bottom: -60px;
+      right: calc(43% - 50px);
+      .owl-dot {
+        span {
+          width: 30px;
+          height: 0px;
+          border: 3px solid #B3B7BC;
+          transition: all .3s ease-in;
+          margin: 0 6px;
+        }
+
+        &.active, &:hover {
+          span {
+            border: 3px solid #424551;
+          }
+        }
+      }
+    }
+  }
+}
+
 

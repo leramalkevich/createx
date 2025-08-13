@@ -21,7 +21,7 @@
   color: variables.$white-color;
 }
 
-@mixin bg-color-styles(){
+@mixin bg-color-styles() {
   position: relative;
   &::before {
     content: "";
@@ -51,14 +51,37 @@
   width: 201px;
 }
 
-@mixin title-styles($size: 46px){
+@mixin button-circle-styles() {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color .3s ease-in;
+  svg path {
+    transition: all .2s ease-in;
+    fill: variables.$text-color;
+  }
+  &:hover {
+    background-color: variables.$primary-color;
+
+    svg path {
+      fill: variables.$white-color;
+    }
+  }
+}
+
+@mixin title-styles($size: 46px) {
   font-weight: 900;
   font-size: $size;
   letter-spacing: 1px;
   color: variables.$title-text-color;
 }
 
-@mixin above-title-styles(){
+@mixin above-title-styles() {
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
