@@ -114,5 +114,6 @@ export class CoursesService {
   }
 
   courses = signal(this.getCourses());
+  verticalCardView = signal(false);
   constructor() { }
 }

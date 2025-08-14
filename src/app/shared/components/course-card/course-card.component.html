@@ -1,5 +1,5 @@
-<div class="course-card" *ngIf="course">
-  <div class="course-by-image" style="background-image: url('images/authors/{{course.author.image}}')"></div>
+<div class="course-card" *ngIf="course" #card>
+  <div class="course-by-image" [style.background-image]="backgroundImages"></div>
   <div class="course-description">
     <div class="course-type" [style]="categoryStyles">{{course.category}}</div>
     <div class="course-title">{{course.title}}</div>

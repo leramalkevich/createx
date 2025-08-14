@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {ReviewsComponent} from '../../shared/components/reviews/reviews.component';
 import {SubscribeComponent} from '../../shared/components/subscribe/subscribe.component';
 import {CertificateComponent} from '../../shared/components/certificate/certificate.component';
@@ -14,12 +14,15 @@ import {CourseCardComponent} from '../../shared/components/course-card/course-ca
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.scss'
 })
-export class CoursesComponent implements OnInit {
+export class CoursesComponent implements OnInit, AfterViewInit {
   courses:CourseType[]=[];
   constructor(private certificateService:CertificateService, private coursesService: CoursesService) {
   }
   ngOnInit() {
     this.certificateService.twoColoredBg.set(false);
     this.courses = this.coursesService.courses();
+    this.coursesService.verticalCardView.set(true);
+  }
+  ngAfterViewInit() {
   }
 }

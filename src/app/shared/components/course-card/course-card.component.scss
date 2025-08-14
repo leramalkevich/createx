@@ -10,16 +10,31 @@
   box-shadow: 0px 30px 24px -10px #9A9CA50D;
   display: flex;
   justify-content: space-between;
+
   .course-by-image {
     width: 214px;
-    height: 214px;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    background-color: variables.$secondary-color;
+  }
+  &.vertical {
+    width: 390px;
+    height: 438px;
+    display: block;
+    .course-by-image {
+      width: 100%;
+      height: 240px;
+    }
+    .course-description {
+      padding: 24px;
+      box-sizing: border-box;
+      width: 100%;
+      text-align: left;
+    }
   }
   .course-description {
     padding: 32px;
-    //box-sizing: border-box;
     width: 322px;
     .course-type {
       padding: 1px 8px;
@@ -48,15 +63,9 @@
         margin-right: 5px;
       }
       .author {
-        //font-weight: 400;
         font-size: 18px;
         color: variables.$author-card-color;
-
       }
     }
-
-
   }
-
-
 }
