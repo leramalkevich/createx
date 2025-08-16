@@ -1,4 +1,8 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {
+  AfterContentChecked,
+  Component,
+  OnInit,
+} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {HeaderService} from '../../services/header.service';
 
@@ -8,12 +12,18 @@ import {HeaderService} from '../../services/header.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent implements OnInit, AfterViewInit {
-  whiteBg:boolean | undefined;
-  constructor(private headerService:HeaderService) {}
+export class HeaderComponent implements OnInit, AfterContentChecked {
+  whiteBg: boolean | undefined;
+
+  constructor(private headerService: HeaderService) {
+  }
+
   ngOnInit() {
     this.whiteBg = this.headerService.whiteBg();
-    console.log(this.whiteBg);
   }
-  ngAfterViewInit() {}
+
+  ngAfterContentChecked() {
+    this.whiteBg = this.headerService.whiteBg();
+  }
+
 }

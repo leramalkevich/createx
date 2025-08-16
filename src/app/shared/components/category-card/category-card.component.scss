@@ -1,0 +1,52 @@
+@use "../../../../assets/styles/variables";
+.category-card {
+  width: 390px;
+  height: 420px;
+  border: 1px solid #E5E8ED;
+  border-radius: 4px;
+  box-sizing: border-box;
+  .category-card-image {
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .category-card-description {
+    padding: 24px;
+    text-align: left;
+    .category {
+      margin-bottom: 20px;
+      border-radius: 4px;
+      padding: 1px 8px;
+      box-sizing: border-box;
+      font-weight: 700;
+      color: variables.$white-color;
+    }
+    .text {
+      margin: 20px 0;
+      color: variables.$author-card-color;
+      line-height: 160%;
+    }
+    .link {
+      text-decoration: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      span {
+        font-weight: 700;
+        color: variables.$title-text-color;
+        margin-right: 8px;
+        transition: color .3s ease-in;
+      }
+      &:hover {
+        span {
+          color: variables.$primary-color;
+        }
+        svg path {
+          fill: variables.$primary-color;
+        }
+      }
+
+    }
+  }
+}

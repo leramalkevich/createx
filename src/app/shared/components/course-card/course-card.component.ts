@@ -61,6 +61,9 @@ export class CourseCardComponent implements OnInit, AfterViewInit {
     } else if (this.course.category === 'Design') {
       this.categoryStyles.backgroundColor = '#F52F6E';
       this.categoryStyles.width = '59px';
+    } else if (this.course.category === 'Development') {
+      this.categoryStyles.backgroundColor = '#7772F1';
+      this.categoryStyles.width = '113px';
     }
   }
   ngAfterViewInit() {

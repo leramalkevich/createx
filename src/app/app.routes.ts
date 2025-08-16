@@ -6,7 +6,8 @@ export const routes: Routes = [
     path: '', component: LayoutComponent,
     children: [
       {path:'', loadComponent: ()=>import('./feature/main/main.component').then((m)=>m.MainComponent)},
-      {path:'courses', loadComponent:()=>import('./feature/courses/courses.component').then((m)=>m.CoursesComponent)}
+      {path:'courses', loadComponent:()=>import('./feature/courses/courses.component').then((m)=>m.CoursesComponent)},
+      {path:'about-us', loadComponent:()=>import('./feature/about-us/about-us.component').then((m)=>m.AboutUsComponent)}
     ]
   }
 ];

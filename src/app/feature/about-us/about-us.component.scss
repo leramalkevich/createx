@@ -1,0 +1,366 @@
+@use "../../../assets/styles/mixins";
+@use "../../../assets/styles/variables";
+
+.about-us {
+  padding-top: 60px;
+  padding-bottom: 180px;
+  .container {
+    background-image: url("../../../assets/images/about/illustration-about.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    .about-us-text-block {
+      max-width: 600px;
+      .about-us-above-title {
+        @include mixins.above-title-styles();
+      }
+      .about-us-title {
+        @include mixins.title-styles(46px);
+        margin-bottom: 48px;
+      }
+      .about-us-description {
+        margin-bottom: 60px;
+
+        .description-bold-text {
+          font-weight: 700;
+          font-size: 20px;
+          color: variables.$title-text-color;
+          margin-bottom: 24px;
+        }
+      }
+      .actions {
+        display: flex;
+        align-items: center;
+        .button {
+          text-decoration: none;
+          text-align: center;
+          @include mixins.button-styles(variables.$gradient-color, variables.$white-color, 199px);
+          &.transparent {
+            margin-right: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.link-to-video {
+  padding-bottom: 180px;
+  background-image: url("../../../assets/images/about/dots-about.png"), url("../../../assets/images/about/shapes-about.png");
+  background-repeat: no-repeat;
+  background-position: calc(5% + 15px) calc(85% - 45px), calc(95% + 5px) calc(95% - 5px);
+  .container {
+    .play-block {
+      display: flex;
+      align-items: center;
+      margin-bottom: 32px;
+      .play-button {
+        @include mixins.play-button-styles();
+      }
+      .play-description {
+        margin-left: 16px;
+        font-weight: 700;
+        font-size: 14px;
+        color: variables.$title-text-color;
+      }
+    }
+    .pros-items-block {
+      display: flex;
+      justify-content: flex-end;
+      background-image: url("../../../assets/images/about/image-about-bg-1.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: left;
+      .pros-items {
+        max-width: 288px;
+        padding: 96px 0;
+        .item {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          .item-number {
+            font-weight: 900;
+            font-size: 48px;
+            letter-spacing: 1px;
+            color: variables.$primary-color;
+            margin-right: 16px;
+          }
+          .item-text {
+            font-weight: 700;
+            font-size: 18px;
+            color: variables.$title-text-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.values {
+  padding-bottom: 180px;
+  .container {
+    .values-above-title {
+      @include mixins.above-title-styles();
+    }
+    .values-title {
+      @include mixins.title-styles(46px);
+      margin-bottom: 60px;
+    }
+    .value-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .value-item {
+        max-width: 240px;
+        text-align: center;
+        .value-item-icon {
+          margin-bottom: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .value-item-title {
+          font-weight: 700;
+          font-size: 20px;
+          color: variables.$title-text-color;
+          margin-bottom: 8px;
+        }
+        .value-item-description {
+          color: variables.$author-card-color;
+        }
+      }
+      .item-divider {
+        border: 1px solid rgba(218, 219, 221);
+        height: 162px;
+      }
+    }
+  }
+}
+
+.directions {
+    .container {
+      text-align: center;
+      .directions-above-title {
+        @include mixins.above-title-styles();
+      }
+      .directions-title {
+        @include mixins.title-styles(46px);
+        margin-bottom: 60px;
+      }
+      .direction-items {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+        .direction-item {
+          &.new-program {
+            width: 390px;
+            height: 420px;
+            border: 1px solid #E5E8ED;
+            border-radius: 4px;
+            box-sizing: border-box;
+            padding: 74px;
+            background-color: variables.$gray-bg-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            .inner-text {
+              font-weight: 700;
+              font-size: 20px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+}
+
+.progress {
+  padding: 180px 0;
+  background-image: url("../../../assets/images/about/progress-shapes.png"), url("../../../assets/images/about/progress-circles.png");
+  background-repeat: no-repeat;
+  background-position: left bottom, right top;
+  .container {
+    background-image: url("../../../assets/images/about/progress-illustration.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: contain;
+    display: flex;
+    justify-content: flex-start;
+    .progress-description {
+      max-width: 500px;
+      .progress-description-above-title {
+        @include mixins.above-title-styles();
+      }
+      .progress-description-title {
+        @include mixins.title-styles(46px);
+        margin-bottom: 60px;
+      }
+      .progress-description-items {
+        max-width: 495px;
+        .progress-description-item {
+          .progress-description-item-step {
+            display: flex;
+            align-items: center;
+            .circle {
+              width: 8px;
+              height: 8px;
+              border-radius: 50%;
+              background-color: variables.$primary-color;
+              border: 4px solid variables.$white-color;
+              margin-right: 40px;
+            }
+            .step {
+              font-weight: 900;
+              font-size: 12px;
+              text-transform: uppercase;
+              color: variables.$author-card-color;
+            }
+          }
+          .progress-description-item-step-description {
+            display: flex;
+            .line {
+              border: 1px solid variables.$gray-button-color;
+              margin-right: 45px;
+              margin-left: 7px;
+              opacity: 50%;
+            }
+            .description-block {
+              margin-top: 2px;
+              .title {
+                font-weight: 700;
+                font-size: 20px;
+                color: variables.$title-text-color;
+                margin-bottom: 8px;
+              }
+              .text {
+                color: variables.$author-card-color;
+                margin-bottom: 32px;
+              }
+            }
+          }
+          &:last-child {
+            .progress-description-item-step-description {
+              .description-block {
+                .text {
+                  margin-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+.best-tutors {
+  padding-bottom: 60px;
+  .container {
+    text-align: center;
+    .above-title {
+      @include mixins.above-title-styles();
+    }
+    .title {
+      @include mixins.title-styles(46px);
+      margin-bottom: 60px;
+    }
+    .best-tutors-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .best-tutors-item {
+        margin-bottom: 60px;
+      }
+    }
+  }
+}
+
+.jobs {
+  background-color: variables.$gray-bg-color;
+  padding: 100px 0;
+  background-image: url("../../../assets/images/about/jobs-shapes.png"), url("../../../assets/images/about/jobs-circles.png");
+  background-repeat: no-repeat;
+  background-position: calc(5% + 5px) calc(20% + 5px), right calc(0% - 165px);
+  .container {
+    text-align: center;
+    .jobs-above-title {
+      @include mixins.above-title-styles();
+    }
+    .jobs-title {
+      @include mixins.title-styles(46px);
+      margin-bottom: 40px;
+    }
+    .job-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+
+      .job-item {
+        margin: 0 20px;
+        width: 120px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 30%;
+        filter: grayscale(100%);
+        transition: all .3s ease-in;
+        &:hover {
+          opacity: 100%;
+          filter: grayscale(0%);
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.blog {
+  padding-top: 100px;
+  padding-bottom: 180px;
+  .container {
+    .header-blog-block {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 60px;
+      .blog-titles {
+        .blog-above-title {
+          @include mixins.above-title-styles();
+        }
+        .blog-title {
+          @include mixins.title-styles(46px);
+        }
+      }
+      .actions {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        .button {
+          @include mixins.button-styles(variables.$gradient-color, variables.$white-color, 158px);
+        }
+      }
+    }
+    .blog-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
