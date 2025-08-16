@@ -1,0 +1,21 @@
+@use "../../../assets/styles/mixins";
+.blog {
+  padding-top: 60px;
+  .container {
+    text-align: center;
+    .blog-above-title {
+      @include mixins.above-title-styles();
+    }
+    .blog-title {
+      @include mixins.title-styles(46px);
+      margin-bottom: 60px;
+    }
+    .blog-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      text-align: left;
+    }
+  }
+}

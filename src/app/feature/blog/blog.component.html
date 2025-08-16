@@ -2,9 +2,9 @@
   <div class="container">
     <div class="blog-above-title">Our blog</div>
     <div class="blog-title">Createx School Journal</div>
-    <div class="blog-items">
-      <div class="blog-item">
-
+    <div class="blog-items" *ngIf="blogPosts">
+      <div class="blog-item" *ngFor="let blogPost of blogPosts">
+        <blog-post-card [post]="blogPost"></blog-post-card>
       </div>
     </div>
   </div>

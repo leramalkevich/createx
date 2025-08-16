@@ -62,7 +62,7 @@ export class MainComponent implements OnInit {
     this.headerService.whiteBg.set(false);
     this.courses = this.coursesService.getRandomCourses(6);
     this.team = this.teamService.team();
-    this.blogPosts = this.postsService.posts();
+    this.blogPosts = this.postsService.getRandomBlogPosts(3);
     this.certificateService.twoColoredBg.set(true);
   }
 }
