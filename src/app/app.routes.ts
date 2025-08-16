@@ -7,7 +7,8 @@ export const routes: Routes = [
     children: [
       {path:'', loadComponent: ()=>import('./feature/main/main.component').then((m)=>m.MainComponent)},
       {path:'courses', loadComponent:()=>import('./feature/courses/courses.component').then((m)=>m.CoursesComponent)},
-      {path:'about-us', loadComponent:()=>import('./feature/about-us/about-us.component').then((m)=>m.AboutUsComponent)}
+      {path:'about-us', loadComponent:()=>import('./feature/about-us/about-us.component').then((m)=>m.AboutUsComponent)},
+      {path:'blog', loadComponent:()=>import('./feature/blog/blog.component').then((m)=>m.BlogComponent)}
     ]
   }
 ];
