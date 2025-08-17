@@ -1,0 +1,149 @@
+@use "../../../assets/styles/mixins";
+@use "../../../assets/styles/variables";
+.contacts {
+  padding-top: 60px;
+  padding-bottom: 180px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    .contacts-info {
+      max-width: 400px;
+      .above-title {
+        @include mixins.above-title-styles();
+      }
+      .title {
+        @include mixins.title-styles(46px);
+        margin-bottom: 40px;
+      }
+      .contacts-items {
+        margin-bottom: 48px;
+        .contact-item {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 24px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          .contact-item-image {
+            margin-right: 24px;
+            width: 24px;
+            height: 24px;
+            svg {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .contact-item-text {
+            font-size: 14px;
+            font-weight: 700;
+            .contact-item-text-title {
+              color: variables.$author-card-color;
+            }
+            .link {
+              text-decoration: none;
+              cursor: pointer;
+              color: variables.$title-text-color;
+              transition: color .3s ease-in;
+              &:hover {
+                color: variables.$primary-color;
+              }
+            }
+          }
+        }
+      }
+      .social-links-block {
+        .social-links-title {
+          font-weight: 700;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          margin-bottom: 24px;
+          color: variables.$title-text-color;
+        }
+        .social-links {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .social-link {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            cursor: pointer;
+            text-decoration: none;
+            svg path {
+              transition: all .3s ease-in;
+            }
+            &:hover {
+              svg path {
+                fill: variables.$primary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+    iframe {
+      box-shadow: 0px 30px 24px -10px #9A9CA50D;
+      width: 705px;
+      height: 412px;
+    }
+  }
+}
+
+.form-block {
+  padding-bottom: 180px;
+  .container {
+    background-image: url("../../../assets/images/contacts/contact-us-illustration.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left center;
+    display: flex;
+    justify-content: flex-end;
+    .form {
+      max-width: 705px;
+      .form-above-title {
+        @include mixins.above-title-styles();
+      }
+      .form-title {
+        @include mixins.title-styles(46px);
+        margin-bottom: 40px;
+      }
+      .data-block {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .form-input {
+          margin-bottom: 24px;
+          .subscribe-input {
+            width: 340px;
+            margin-top: 8px;
+          }
+        }
+        &.message {
+          flex-flow: column;
+          align-items: flex-start;
+          margin-bottom: 48px;
+          .subscribe-input {
+            width: 705px;
+            height: 128px;
+            margin-top: 8px;
+          }
+        }
+        .agree {
+          max-width: 315px;
+          display: flex;
+          align-items: flex-start;
+          input[type="checkbox"] {
+            margin-top: 3px;
+          }
+          span {
+            max-width: 285px;
+          }
+        }
+        .button {
+          @include mixins.button-styles(variables.$gradient-color, variables.$white-color, 340px);
+        }
+      }
+    }
+  }
+}

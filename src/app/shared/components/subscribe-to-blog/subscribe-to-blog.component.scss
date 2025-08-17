@@ -31,29 +31,7 @@
       .input-label {
         display: flex;
         align-items: center;
-        input[type="checkbox"] {
-          margin-right: 12px;
-          appearance: none;
-          width: 16px;
-          height: 16px;
-          border: 1px solid #D7DADD;
-          border-radius: 3px;
-          cursor: pointer;
-          position: relative;
-          background-color: white;
-          &:checked {
-            background-color: variables.$primary-color;
-            border-color: variables.$primary-color;
-            &::before {
-              content: '\2713'; /* Checkmark character */
-              display: block;
-              color: white;
-              font-size: 14px;
-              text-align: center;
-              line-height: 16px;
-            }
-          }
-        }
+
         span {}
       }
     }
