@@ -10,6 +10,7 @@ export const routes: Routes = [
       {path:'about-us', loadComponent:()=>import('./feature/about-us/about-us.component').then((m)=>m.AboutUsComponent)},
       {path:'blog', loadComponent:()=>import('./feature/blog/blog.component').then((m)=>m.BlogComponent)},
       {path:'contact-us', loadComponent:()=>import('./feature/contacts/contacts.component').then((m)=>m.ContactsComponent)},
+      {path:'events', loadComponent:()=>import('./feature/events/events.component').then((m)=>m.EventsComponent)}
     ]
   }
 ];

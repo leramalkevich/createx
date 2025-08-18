@@ -1,0 +1,11 @@
+<section class="events">
+  <div class="container">
+    <div class="events-above-title">Our events</div>
+    <div class="events-title">Lectures, workshops & master-classes</div>
+    <div class="events-items" *ngIf="events">
+      <div class="event-item" *ngFor="let event of events">
+          <event-card [event]="event"></event-card>
+      </div>
+    </div>
+  </div>
+</section>

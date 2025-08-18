@@ -1,0 +1,31 @@
+@use "../../../assets/styles/mixins";
+@use "../../../assets/styles/variables";
+.events {
+  padding-top: 60px;
+  padding-bottom: 180px;
+  background-image: url("../../../assets/images/events/events-dots.png"), url("../../../assets/images/events/events-circles.png");
+  background-repeat: no-repeat;
+  background-position: left calc(3% + 5px), right calc(65% + 25px);
+
+  .container {
+    text-align: center;
+    .events-above-title {
+      @include mixins.above-title-styles();
+    }
+    .events-title {
+      @include mixins.title-styles(46px);
+      margin-bottom: 60px;
+    }
+    .events-items {
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      .event-item {
+        width: 100%;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
