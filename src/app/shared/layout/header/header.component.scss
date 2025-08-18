@@ -75,11 +75,13 @@
         box-sizing: border-box;
         cursor: pointer;
         transition: opacity .3s ease-in;
+        text-decoration: none;
         svg {
           margin-right: 8px;
         }
         span {
           font-weight: 700;
+          color: variables.$text-color;
         }
         &:hover {
           opacity: 70%;

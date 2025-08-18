@@ -5,17 +5,20 @@ import {
 } from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {HeaderService} from '../../services/header.service';
+import {SignService} from '../../services/sign.service';
+import {SignInComponent} from '../../components/sign-in/sign-in.component';
+import {SignUpComponent} from '../../components/sign-up/sign-up.component';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink],
+  imports: [RouterLink, SignInComponent, SignUpComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit, AfterContentChecked {
   whiteBg: boolean | undefined;
 
-  constructor(private headerService: HeaderService) {
+  constructor(private headerService: HeaderService, private signService:SignService) {
   }
 
   ngOnInit() {
@@ -25,5 +28,7 @@ export class HeaderComponent implements OnInit, AfterContentChecked {
   ngAfterContentChecked() {
     this.whiteBg = this.headerService.whiteBg();
   }
-
+  showSignIn(){
+    this.signService.showSignIn();
+  }
 }

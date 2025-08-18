@@ -9,7 +9,7 @@ export const routes: Routes = [
       {path:'courses', loadComponent:()=>import('./feature/courses/courses.component').then((m)=>m.CoursesComponent)},
       {path:'about-us', loadComponent:()=>import('./feature/about-us/about-us.component').then((m)=>m.AboutUsComponent)},
       {path:'blog', loadComponent:()=>import('./feature/blog/blog.component').then((m)=>m.BlogComponent)},
-      {path:'contact-us', loadComponent:()=>import('./feature/contacts/contacts.component').then((m)=>m.ContactsComponent)}
+      {path:'contact-us', loadComponent:()=>import('./feature/contacts/contacts.component').then((m)=>m.ContactsComponent)},
     ]
   }
 ];
