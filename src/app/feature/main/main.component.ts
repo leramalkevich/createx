@@ -16,11 +16,14 @@ import {SubscribeComponent} from '../../shared/components/subscribe/subscribe.co
 import {ReviewsComponent} from '../../shared/components/reviews/reviews.component';
 import {CertificateComponent} from '../../shared/components/certificate/certificate.component';
 import {CertificateService} from '../../shared/services/certificate.service';
+import {EventService} from '../../shared/services/event.service';
+import {EventType} from '../../../types/event.type';
+import {EventCardComponent} from '../../shared/components/event-card/event-card.component';
 
 @Component({
   selector: 'app-main',
   imports: [RouterLink, CommonModule, CourseCardComponent, CarouselModule, TeamMemberCardComponent, BlogPostCardComponent,
-    SubscribeComponent, ReviewsComponent, CertificateComponent],
+    SubscribeComponent, ReviewsComponent, CertificateComponent, EventCardComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
@@ -28,6 +31,7 @@ export class MainComponent implements OnInit {
   courses: CourseType[] = [];
   team: TeamMemberType[] = [];
   blogPosts:PostType[]=[];
+  events:EventType[]=[];
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -55,7 +59,7 @@ export class MainComponent implements OnInit {
   }
 
   constructor(private headerService: HeaderService, private coursesService: CoursesService, private teamService: TeamService,
-     private postsService: PostsService, private certificateService: CertificateService) {
+     private postsService: PostsService, private certificateService: CertificateService, private eventService: EventService) {
   }
 
   ngOnInit() {
@@ -64,5 +68,6 @@ export class MainComponent implements OnInit {
     this.team = this.teamService.team();
     this.blogPosts = this.postsService.getRandomBlogPosts(3);
     this.certificateService.twoColoredBg.set(true);
+    this.events = this.eventService.getRandomBlogPosts(3);
   }
 }

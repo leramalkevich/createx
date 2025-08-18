@@ -3,10 +3,11 @@ import {EventCardComponent} from '../../shared/components/event-card/event-card.
 import {EventService} from '../../shared/services/event.service';
 import {EventType} from '../../../types/event.type';
 import {CommonModule} from '@angular/common';
+import {SubscribeComponent} from '../../shared/components/subscribe/subscribe.component';
 
 @Component({
   selector: 'events',
-  imports: [EventCardComponent, CommonModule],
+  imports: [EventCardComponent, CommonModule, SubscribeComponent],
   templateUrl: './events.component.html',
   styleUrl: './events.component.scss'
 })

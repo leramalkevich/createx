@@ -305,7 +305,10 @@
 
     .events-items {
       margin-bottom: 60px;
-
+      text-align: left;
+      .event-item {
+        margin-bottom: 24px;
+      }
     }
 
     .events-actions {
