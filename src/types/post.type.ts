@@ -10,4 +10,5 @@ export type PostType = {
     date:string,
     timeToConsume?: string
   }
+  bigPost?:boolean
 }
