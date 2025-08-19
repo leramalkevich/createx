@@ -16,15 +16,47 @@
       @include mixins.title-styles(46px);
       margin-bottom: 60px;
     }
+    .events-view {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 60px;
+      .view-button {
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        margin-left: 12px;
+        svg path {
+          transition: all .3s ease-in;
+        }
+        &:first-child {
+          margin-left: 0;
+        }
+        &:hover, &.active {
+          svg path {
+            fill: variables.$primary-color;
+          }
+        }
+      }
+    }
     .events-items {
       text-align: left;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-direction: column;
-      .event-item {
-        width: 100%;
-        margin-bottom: 24px;
+      &.list {
+        flex-direction: column;
+        .event-item {
+          width: 100%;
+          margin-bottom: 24px;
+        }
+      }
+      &.grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        .event-item {
+          margin-bottom: 30px;
+        }
       }
     }
   }

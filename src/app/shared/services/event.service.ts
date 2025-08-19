@@ -113,5 +113,6 @@ export class EventService {
   }
 
   events = signal(this.getEvents());
+  gridCardView = signal(false);
   constructor() { }
 }
