@@ -5,6 +5,16 @@
   border: 1px solid #E5E8ED;
   border-radius: 4px;
   box-sizing: border-box;
+  cursor: pointer;
+  &:hover {
+    .category-card-description {
+      .link {
+        span {
+          color: variables.$primary-color;
+        }
+      }
+    }
+  }
   .category-card-image {
     height: 200px;
     background-repeat: no-repeat;
@@ -38,15 +48,6 @@
         margin-right: 8px;
         transition: color .3s ease-in;
       }
-      &:hover {
-        span {
-          color: variables.$primary-color;
-        }
-        svg path {
-          fill: variables.$primary-color;
-        }
-      }
-
     }
   }
 }

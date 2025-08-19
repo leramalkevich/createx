@@ -24,12 +24,16 @@
     }
     &:hover {
       &::before {
+        animation: fadeIn .3s ease-in;
         background: linear-gradient(180deg, rgba(30, 33, 44, 0) 43.9%, rgba(30, 33, 44, 0.03) 55.21%, rgba(30, 33, 44, 0.33) 68.73%, rgba(30, 33, 44, 0.56) 76.17%, rgba(30, 33, 44, 0.768225) 83.75%, rgba(30, 33, 44, 0.92) 91.49%, #1E212C 100%);
-
       }
       .team-member-socials {
+        transition: all .3s ease-in;
         display: flex;
         .social-link {
+          svg g {
+            transition: opacity .3s ease-in;
+          }
           &:hover {
             svg g {
               opacity: 100%;
@@ -66,5 +70,16 @@
     .team-member-job {
       color: variables.$author-card-color;
     }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

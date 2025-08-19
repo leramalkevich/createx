@@ -49,10 +49,9 @@
               font-weight: 700;
               font-size: 16px;
               color: variables.$text-color;
-              opacity: 1;
-              transition: opacity .3s ease-in;
+              transition: all .3s ease-in;
               &:hover {
-                opacity: 70%;
+                color: variables.$primary-color;
               }
             }
           }
@@ -74,17 +73,25 @@
         border: none;
         box-sizing: border-box;
         cursor: pointer;
-        transition: opacity .3s ease-in;
         text-decoration: none;
         svg {
           margin-right: 8px;
+          path {
+            transition: fill .3s ease-in;
+          }
         }
         span {
           font-weight: 700;
           color: variables.$text-color;
+          transition: color .3s ease-in;
         }
         &:hover {
-          opacity: 70%;
+          span {
+            color: variables.$primary-color;
+          }
+          svg path {
+            fill: variables.$primary-color;
+          }
         }
       }
     }

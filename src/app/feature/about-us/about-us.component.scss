@@ -37,6 +37,7 @@
           text-align: center;
           @include mixins.button-styles(variables.$gradient-color, variables.$white-color, 199px);
           &.transparent {
+            @include mixins.button-styles(variables.$white-color, variables.$primary-color, 199px);
             margin-right: 24px;
           }
         }
@@ -158,6 +159,10 @@
         flex-wrap: wrap;
         gap: 30px;
         .direction-item {
+          transition: all .3s ease-in;
+          &:hover {
+            transform: scale(1.01);
+          }
           &.new-program {
             width: 390px;
             height: 420px;

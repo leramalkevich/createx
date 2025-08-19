@@ -32,7 +32,7 @@ export class AboutUsComponent implements OnInit {
   ngOnInit() {
     this.headerService.whiteBg.set(true);
     this.tutors = this.teamService.team();
-    this.latestPost = this.postsService.getBlogPosts();
+    this.latestPost = this.postsService.getRandomBlogPosts(3);
     this.courseCategories = this.categoryService.categories();
   }
 }

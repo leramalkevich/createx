@@ -55,6 +55,24 @@
             &.transparent {
               margin-right: 24px;
               width: 148px;
+              border-color: variables.$primary-color;
+              color: variables.$primary-color;
+              position: relative;
+              background: none;
+
+              &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: variables.$gradient-color;
+                background-size: cover;
+                background-position: center;
+                opacity: 0;
+                z-index: 3;
+              }
             }
           }
         }
@@ -183,8 +201,7 @@
         text-align: center;
 
         .button {
-          @include mixins.button-styles(variables.$gradient-color, variables.$white-color, 203px);
-          text-decoration: none;
+          @include mixins.button-styles(variables.$white-color, variables.$primary-color, 203px);
         }
       }
     }
@@ -264,20 +281,41 @@
       }
     }
 
-    .advantage-block {
-      background-image: url("../../../assets/images/main/illustration-benefit-1.png");
-      background-repeat: no-repeat;
-      background-position: right;
-      background-size: contain;
+    .benefits-text {
+      .advantage-block {
+        height: 440px;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: contain;
+        &.shown {
+          animation: fadeIn .6s ease-in;
+        }
 
-      .advantage-text-block {
-        max-width: 495px;
-        padding: 122px 0;
-        text-align: left;
+        &.tutors {
+          background-image: url("../../../assets/images/main/illustration-benefit-1.png");
+        }
 
-        .advantage-title {
-          @include mixins.title-styles(32px);
-          margin-bottom: 24px;
+        &.feedback {
+          background-image: url("../../../assets/images/main/illustration-benefit-2.png");
+        }
+
+        &.library {
+          background-image: url("../../../assets/images/main/illustration-benefit-3.png");
+        }
+
+        &.community {
+          background-image: url("../../../assets/images/main/illustration-benefit-4.png");
+        }
+
+        .advantage-text-block {
+          max-width: 495px;
+          padding: 122px 0;
+          text-align: left;
+
+          .advantage-title {
+            @include mixins.title-styles(32px);
+            margin-bottom: 24px;
+          }
         }
       }
     }
@@ -306,6 +344,7 @@
     .events-items {
       margin-bottom: 60px;
       text-align: left;
+
       .event-item {
         margin-bottom: 24px;
       }
@@ -374,28 +413,34 @@
 .blog {
   padding-top: 120px;
   padding-bottom: 180px;
+
   .container {
     .blog-header {
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
       margin-bottom: 60px;
+
       .blog-header-title {
         .above-title {
           @include mixins.above-title-styles();
         }
+
         .title {
           @include mixins.title-styles(46px);
         }
       }
+
       .blog-actions {
         display: flex;
         text-align: center;
+
         .button {
           @include mixins.button-styles(variables.$gradient-color, variables.$white-color, 158px);
         }
       }
     }
+
     .blog-items {
       display: flex;
       justify-content: space-between;
@@ -405,20 +450,14 @@
 }
 
 
-
-
-
-//@keyframes pulse {
-//  0% {
-//    transform: scale(1);
-//    opacity: 1;
-//  }
-//  50% {
-//    transform: scale(1.2);
-//    opacity: 0.8;
-//  }
-//  100% {
-//    transform: scale(1);
-//    opacity: 1;
-//  }
-//}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    display: block;
+  }
+}

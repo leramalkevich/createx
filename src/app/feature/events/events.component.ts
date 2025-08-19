@@ -4,6 +4,7 @@ import {EventService} from '../../shared/services/event.service';
 import {EventType} from '../../../types/event.type';
 import {CommonModule} from '@angular/common';
 import {SubscribeComponent} from '../../shared/components/subscribe/subscribe.component';
+import {HeaderService} from '../../shared/services/header.service';
 
 @Component({
   selector: 'events',
@@ -17,10 +18,11 @@ export class EventsComponent implements OnInit, AfterViewInit {
   @ViewChild('gridEventsView')gridEventsView!:ElementRef;
   @ViewChild('eventsItems')eventsItems!:ElementRef;
 
-  constructor(private eventService: EventService) {
+  constructor(private eventService: EventService, private headerService:HeaderService) {
   }
 
   ngOnInit() {
+    this.headerService.whiteBg.set(true);
     this.events = this.eventService.events();
   }
   ngAfterViewInit() {

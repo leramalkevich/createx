@@ -193,7 +193,7 @@
     <div class="benefits-above-title">Our benefits</div>
     <div class="benefits-title">That’s how we do it</div>
     <div class="benefits-actions">
-      <button class="button transparent with-svg active">
+      <button class="button transparent with-svg" id="1" (click)="showDescription(tutors)" #tutors [ngClass]="{'active':tutorsShown}">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M6.77932 1.46709C7.24248 0.398992 8.75719 0.39899 9.22036 1.46709L10.6214 4.69809L14.1273 5.03216C15.2862 5.14259 15.7543 6.58317 14.8816 7.35373L12.2417 9.68466L13.0073 13.1221C13.2604 14.2585 12.035 15.1488 11.0325 14.5569L7.99984 12.7665L4.96721 14.5569C3.96469 15.1488 2.73926 14.2585 2.99236 13.1221L3.75801 9.68466L1.11809 7.35373C0.245398 6.58317 0.71347 5.14259 1.87242 5.03216L5.37824 4.69809L6.77932 1.46709ZM9.40091 5.22735L7.99984 1.99635L6.59876 5.22735C6.406 5.67189 5.98678 5.97647 5.50444 6.02243L1.99861 6.35649L4.63852 8.68743C5.00174 9.00813 5.16186 9.50095 5.05652 9.97389L4.29088 13.4114L7.32351 11.621C7.74075 11.3746 8.25893 11.3746 8.67617 11.621L11.7088 13.4114L10.9432 9.97389C10.8378 9.50095 10.9979 9.00813 11.3612 8.68743L14.0011 6.35649L10.4952 6.02243C10.0129 5.97647 9.59368 5.67189 9.40091 5.22735Z"
@@ -201,7 +201,7 @@
         </svg>
         <span>Experienced Tutors</span>
       </button>
-      <button class="button transparent with-svg">
+      <button class="button transparent with-svg" id="2" (click)="showDescription(feedback)" #feedback [ngClass]="{'active':feedbackShown}">
         <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M9.9547 2.16732C9.86168 2.16732 9.77547 2.21676 9.72843 2.29736L9.72433 2.30438L6.66683 7.26115V13.834H12.3907C12.5135 13.834 12.6198 13.7487 12.6464 13.629L12.6487 13.6186L14.3487 6.97883C14.3798 6.8179 14.2565 6.66732 14.0915 6.66732H11.5002C11.066 6.66732 10.6268 6.52228 10.307 6.21014C9.97075 5.88199 9.81488 5.41203 9.91491 4.90572L10.3941 2.48001C10.4261 2.31806 10.3022 2.16732 10.1372 2.16732H9.9547ZM5.3335 13.834V7.73875H2.97118C2.82739 7.73875 2.7104 7.85476 2.70929 7.99872C2.70929 7.99872 2.70929 7.99872 2.70929 7.99872L2.66684 13.5701C2.66572 13.7154 2.78327 13.834 2.92868 13.834H5.3335ZM5.62809 6.40541L8.58155 1.61731C8.86843 1.13222 9.39032 0.833984 9.9547 0.833984H10.1372C11.1424 0.833984 11.897 1.75237 11.7022 2.73844L11.223 5.16415C11.2144 5.20732 11.22 5.22693 11.2213 5.23124C11.2228 5.23604 11.226 5.24402 11.2383 5.25596C11.2661 5.28317 11.3492 5.33398 11.5002 5.33398H14.0915C15.1121 5.33398 15.8701 6.27923 15.6487 7.27539L15.6464 7.28579L13.9453 13.93C13.7788 14.6537 13.1343 15.1673 12.3907 15.1673H2.92868C2.04298 15.1673 1.32676 14.4457 1.33354 13.56C1.33354 13.56 1.33354 13.56 1.33354 13.56L1.37599 7.98854C1.38271 7.11235 2.09485 6.40541 2.97118 6.40541H5.62809Z"
@@ -209,7 +209,7 @@
         </svg>
         <span>Feedback & Support</span>
       </button>
-      <button class="button transparent with-svg">
+      <button class="button transparent with-svg" id="3" (click)="showDescription(library)" #library [ngClass]="{'active':libraryShown}">
         <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M8.20184 0.736397C8.38953 0.642555 8.61044 0.642555 8.79813 0.736397L15.4648 4.06973C15.6906 4.18266 15.8333 4.4135 15.8333 4.66602C15.8333 4.91853 15.6906 5.14937 15.4648 5.2623L8.79813 8.59563C8.61044 8.68948 8.38953 8.68948 8.20184 8.59563L1.53517 5.2623C1.30932 5.14937 1.16665 4.91853 1.16665 4.66602C1.16665 4.4135 1.30932 4.18266 1.53517 4.06973L8.20184 0.736397ZM3.32403 4.66602L8.49998 7.25399L13.6759 4.66602L8.49998 2.07804L3.32403 4.66602Z"
@@ -223,7 +223,7 @@
         </svg>
         <span>24/7 Online Library</span>
       </button>
-      <button class="button transparent with-svg">
+      <button class="button transparent with-svg" id="4" (click)="showDescription(community)" #community [ngClass]="{'active':communityShown}">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M14.6153 7.04557C14.5204 7.70339 14.2954 8.32861 13.9619 8.90355C13.9869 9.0459 13.9997 9.18979 13.9997 9.33429C13.9997 9.83617 13.8543 10.3165 13.5849 10.7529C13.4504 10.9707 13.4158 11.226 13.4025 11.3946C13.3873 11.5879 13.3924 11.7994 13.4062 12.0025C13.4217 12.2304 13.4497 12.4697 13.4818 12.6954C13.2216 12.6196 12.9395 12.5434 12.6704 12.4826C12.4465 12.4321 12.2174 12.3891 12.0099 12.3676C11.8289 12.349 11.5674 12.3345 11.3335 12.4101C10.8221 12.5754 10.2594 12.6676 9.66636 12.6676C8.96109 12.6676 8.31335 12.5424 7.74559 12.325C7.60903 12.3312 7.47147 12.3343 7.33301 12.3343C6.52993 12.3343 5.75701 12.2287 5.03385 12.0335C6.08516 13.2494 7.81828 14.001 9.66636 14.001C10.3883 14.001 11.0812 13.8901 11.7198 13.6864C11.7209 13.6865 11.723 13.6864 11.726 13.6864C11.7424 13.686 11.7879 13.6851 11.8729 13.6939C12.0067 13.7077 12.1786 13.7385 12.377 13.7833C12.7719 13.8724 13.2157 14.0038 13.5615 14.1136C14.2949 14.3464 15.0056 13.7064 14.8745 12.9621C14.8181 12.6418 14.7595 12.2508 14.7365 11.9122C14.7249 11.7419 14.7236 11.6021 14.7317 11.4995C14.7351 11.457 14.7394 11.4304 14.7421 11.4162C15.1172 10.7949 15.333 10.0874 15.333 9.33429C15.333 8.48526 15.0693 7.70995 14.6153 7.04557Z"
@@ -235,7 +235,8 @@
         <span>Community</span>
       </button>
     </div>
-    <div class="advantage-block">
+    <div class="benefits-text">
+    <div class="advantage-block tutors" *ngIf="tutorsShown" [ngClass]="{'shown':tutorsShown}">
       <div class="advantage-text-block">
         <div class="advantage-title">Only practicing tutors</div>
         <div class="advantage-description">
@@ -244,6 +245,39 @@
           vestibulum. Nulla nisl accumsan, id dignissim massa ut amet. Amet enim, nisi tempus vehicula.
         </div>
       </div>
+    </div>
+    <div class="advantage-block feedback" *ngIf="feedbackShown" [ngClass]="{'shown':feedbackShown}">
+      <div class="advantage-text-block">
+        <div class="advantage-title">Always in touch, ready to support</div>
+        <div class="advantage-description">
+          Faucibus erat massa elementum nec fermentum augue. Ante pellentesque dis et malesuada mauris, faucibus est et
+          a. Gravida malesuada ut varius eu pretium vitae eu. Volutpat nullam posuere eget felis at dui neque. Neque
+          vitae, pulvinar donec integer lacus, fermentum, faucibus. Lorem porttitor hendrerit vel interdum arcu arcu
+          mollis massa. Velit nulla felis ornare elit a platea malesuada.
+        </div>
+      </div>
+    </div>
+    <div class="advantage-block library" *ngIf="libraryShown" [ngClass]="{'shown': libraryShown}">
+      <div class="advantage-text-block">
+        <div class="advantage-title">The most carefully selected materials</div>
+        <div class="advantage-description">
+          Senectus magnis diam tellus nibh elit ac ac. Elit eget faucibus urna, feugiat arcu mattis viverra tempor id.
+          Vivamus nunc quam donec non amet nulla etiam ullamcorper posuere. Venenatis commodo molestie eleifend nulla
+          faucibus in. In sed felis adipiscing pharetra, etiam. Molestie euismod consectetur eu sed. Sit magnis sed sed
+          ipsum vulputate pellentesque nullam faucibus.
+        </div>
+      </div>
+    </div>
+    <div class="advantage-block community" *ngIf="communityShown" [ngClass]="{'shown': communityShown}">
+      <div class="advantage-text-block">
+        <div class="advantage-title">Student communication</div>
+        <div class="advantage-description">
+          Eu placerat magna elementum nulla egestas id. Non sit enim tortor massa id tristique vel tincidunt sit.
+          Tellus, ridiculus dictum purus nibh sed bibendum. In eleifend ac convallis convallis lectus. Urna semper ac
+          non eros, donec accumsan egestas ipsum. Arcu at morbi.
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 </section>
@@ -317,7 +351,7 @@
     </div>
     <div class="blog-items" *ngIf="blogPosts">
       <div class="blog-item" *ngFor="let blogPost of blogPosts">
-          <blog-post-card [post]="blogPost"></blog-post-card>
+        <blog-post-card [post]="blogPost"></blog-post-card>
       </div>
     </div>
   </div>

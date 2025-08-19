@@ -4,6 +4,16 @@
 .post {
   width: 390px;
   height: 570px;
+  transition: transform .3s ease-in;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.01);
+    .more {
+      span {
+        color: variables.$primary-color;
+      }
+    }
+  }
 
   .post-image {
     height: 300px;
@@ -75,6 +85,9 @@
     align-items: center;
     text-decoration: none;
     cursor: pointer;
+    span {
+      transition: color .3s ease-in;
+    }
     .link-text {
       @include mixins.title-styles(16px);
       margin-right: 8px;

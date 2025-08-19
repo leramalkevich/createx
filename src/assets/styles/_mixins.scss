@@ -50,6 +50,23 @@
   background-clip: border-box;
   width: $width;
   text-decoration: none;
+  transition: all .3s ease-in;
+  &:hover {
+    transform: scale(1.05);
+  }
+  &.transparent {
+    background-image: none;
+    background-color: $bg;
+    border-color: $txtC;
+    color: $txtC;
+    &:hover {
+      background-image: variables.$gradient-color;
+      color: variables.$white-color;
+    }
+  }
+  &.with-svg {
+
+  }
 }
 
 @mixin button-circle-styles() {

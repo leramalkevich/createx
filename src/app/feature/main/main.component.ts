@@ -19,19 +19,41 @@ import {CertificateService} from '../../shared/services/certificate.service';
 import {EventService} from '../../shared/services/event.service';
 import {EventType} from '../../../types/event.type';
 import {EventCardComponent} from '../../shared/components/event-card/event-card.component';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-main',
   imports: [RouterLink, CommonModule, CourseCardComponent, CarouselModule, TeamMemberCardComponent, BlogPostCardComponent,
     SubscribeComponent, ReviewsComponent, CertificateComponent, EventCardComponent],
   templateUrl: './main.component.html',
-  styleUrl: './main.component.scss'
+  styleUrl: './main.component.scss',
+  // animations: [
+  //   trigger('fade', [
+  //     state('visible', style({
+  //       opacity: 1,
+  //       transform:'scale(1)',
+  //       transition: 'opacity 0.3s ease-in, transform 0.3s ease-in',
+  //       // display:'block'
+  //     })),
+  //     state('hidden', style({
+  //       opacity: 0,
+  //       transform: 'scale(0.3)',
+  //       transition: 'all 0.3s ease-in',
+  //       // transition: 'opacity 0.3s ease-in, transform 0.3s ease-in',
+  //       position:'absolute',
+  //       zIndex: 0,
+  //       // display:'none'
+  //     })),
+  //     transition('visible=>hidden', [animate('0.6s ease-in')]),
+  //     transition('hidden=>visible', [animate('0.6s ease-in')])
+  //   ])
+  // ]
 })
 export class MainComponent implements OnInit {
   courses: CourseType[] = [];
   team: TeamMemberType[] = [];
-  blogPosts:PostType[]=[];
-  events:EventType[]=[];
+  blogPosts: PostType[] = [];
+  events: EventType[] = [];
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -57,9 +79,13 @@ export class MainComponent implements OnInit {
     },
     nav: false
   }
+  tutorsShown: boolean = true;
+  feedbackShown: boolean = false;
+  libraryShown: boolean = false;
+  communityShown: boolean = false;
 
   constructor(private headerService: HeaderService, private coursesService: CoursesService, private teamService: TeamService,
-     private postsService: PostsService, private certificateService: CertificateService, private eventService: EventService) {
+              private postsService: PostsService, private certificateService: CertificateService, private eventService: EventService) {
   }
 
   ngOnInit() {
@@ -69,5 +95,29 @@ export class MainComponent implements OnInit {
     this.blogPosts = this.postsService.getRandomBlogPosts(3);
     this.certificateService.twoColoredBg.set(true);
     this.events = this.eventService.getRandomBlogPosts(3);
+  }
+
+  showDescription(clickedBtn: HTMLElement) {
+    if (parseInt(clickedBtn.id) === 1) {
+      this.tutorsShown = true;
+      this.feedbackShown = false;
+      this.libraryShown = false;
+      this.communityShown = false;
+    } else if (parseInt(clickedBtn.id) === 2) {
+      this.feedbackShown = true;
+      this.tutorsShown = false;
+      this.libraryShown = false;
+      this.communityShown = false;
+    } else if (parseInt(clickedBtn.id) === 3) {
+      this.libraryShown = true;
+      this.tutorsShown = false;
+      this.feedbackShown = false;
+      this.communityShown = false;
+    } else if (parseInt(clickedBtn.id) === 4) {
+      this.communityShown = true;
+      this.tutorsShown = false;
+      this.feedbackShown = false;
+      this.libraryShown = false;
+    }
   }
 }
