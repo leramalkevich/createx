@@ -27,7 +27,7 @@ export class SignInComponent implements OnInit, OnDestroy {
     });
   }
   ngOnDestroy() {
-    this.signService.hideSignIn();
+    this.hideSignIn();
   }
   togglePassword() {
     if (this.password.nativeElement.getAttribute('type') == 'password') {
@@ -49,7 +49,7 @@ export class SignInComponent implements OnInit, OnDestroy {
     }
   }
   showSignUp(){
-    this.signService.hideSignIn();
+    this.hideSignIn();
     this.signService.showSignUp();
   }
 }

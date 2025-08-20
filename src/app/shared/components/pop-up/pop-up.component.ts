@@ -17,10 +17,7 @@ export class PopUpComponent implements OnInit {
       this.isShown = this.popUpService.showPopUp();
     })
   }
-  ngOnInit() {
-    // this.isShown = this.popUpService.showPopUp();
-    console.log(this.isShown);
-  }
+  ngOnInit() {}
 
   hidePopUp() {
     this.popUpService.showPopUp.set(false);
