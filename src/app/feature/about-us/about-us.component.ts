@@ -13,6 +13,7 @@ import {SubscribeComponent} from '../../shared/components/subscribe/subscribe.co
 import {CategoryType} from '../../../types/category.type';
 import {CategoryService} from '../../shared/services/category.service';
 import {CategoryCardComponent} from '../../shared/components/category-card/category-card.component';
+import {PopUpService} from '../../shared/services/pop-up.service';
 
 @Component({
   selector: 'app-about-us',
@@ -26,7 +27,7 @@ export class AboutUsComponent implements OnInit {
   courseCategories:CategoryType[]=[];
 
   constructor(private headerService: HeaderService, private teamService: TeamService, private postsService: PostsService,
-              private categoryService:CategoryService) {
+              private categoryService:CategoryService, private popUpService:PopUpService) {
   }
 
   ngOnInit() {
@@ -34,5 +35,8 @@ export class AboutUsComponent implements OnInit {
     this.tutors = this.teamService.team();
     this.latestPost = this.postsService.getRandomBlogPosts(3);
     this.courseCategories = this.categoryService.categories();
+  }
+  showPopUp(){
+    this.popUpService.showPopUp.set(true);
   }
 }

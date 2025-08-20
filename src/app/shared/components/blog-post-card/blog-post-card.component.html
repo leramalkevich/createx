@@ -1,4 +1,4 @@
-<div class="post" *ngIf="post" #blogPost>
+<div class="post" *ngIf="post" #blogPost (click)="showPopUp()">
   <div class="post-image" style="background-image: url('images/blog-posts/{{post.image}}')">
     <div class="post-form">
       <svg *ngIf="post.form === 'Podcast'" width="16" height="17" viewBox="0 0 16 17" fill="none"
@@ -69,7 +69,7 @@
   </div>
   <div class="post-title">{{post.title}}</div>
   <div class="post-description">{{post.description}}</div>
-  <a class="more">
+  <a class="more" (click)="showPopUp()">
     <span class="link-text" *ngIf="post.form === 'Podcast'">Listen</span>
     <span class="link-text" *ngIf="post.form === 'Video'">Watch</span>
     <span class="link-text" *ngIf="post.form === 'Article'">Read</span>

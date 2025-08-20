@@ -2,6 +2,7 @@ import {AfterViewChecked, Component, ElementRef, Input, ViewChild} from '@angula
 import {EventType} from '../../../../types/event.type';
 import {CommonModule} from '@angular/common';
 import {EventService} from '../../services/event.service';
+import {PopUpService} from '../../services/pop-up.service';
 
 @Component({
   selector: 'event-card',
@@ -23,7 +24,7 @@ export class EventCardComponent implements AfterViewChecked{
   };
   @ViewChild('eventCard')eventCard!:ElementRef;
   gridCard: boolean = false;
-  constructor(private eventService:EventService) {
+  constructor(private eventService:EventService, private popUpService:PopUpService) {
   }
 
   ngAfterViewChecked() {
@@ -33,5 +34,8 @@ export class EventCardComponent implements AfterViewChecked{
     } else {
       this.eventCard.nativeElement.classList.remove('grid-view');
     }
+  }
+  showPopUp(){
+    this.popUpService.showPopUp.set(true);
   }
 }

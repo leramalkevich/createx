@@ -4,6 +4,7 @@ import {CommonModule} from '@angular/common';
 import {CoursesService} from '../../services/courses.service';
 import {TeamService} from '../../services/team.service';
 import {TeamMemberType} from '../../../../types/team-member.type';
+import {PopUpService} from '../../services/pop-up.service';
 
 @Component({
   selector: 'course-card',
@@ -31,7 +32,7 @@ export class CourseCardComponent implements OnInit, AfterViewInit {
   author:TeamMemberType|undefined;
   image1:string='url("images/circles-carousels.png")';
   image2:string='';
-  constructor(private coursesService:CoursesService, private teamService:TeamService) {
+  constructor(private coursesService:CoursesService, private teamService:TeamService, private popUpService:PopUpService) {
   }
 
   ngOnInit() {
@@ -76,5 +77,8 @@ export class CourseCardComponent implements OnInit, AfterViewInit {
   }
   get backgroundImages():string{
     return `${this.image2}, ${this.image1}`;
+  }
+  showPopUp(){
+    this.popUpService.showPopUp.set(true);
   }
 }

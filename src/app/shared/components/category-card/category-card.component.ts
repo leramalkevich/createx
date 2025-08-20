@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {CategoryType} from '../../../../types/category.type';
 import {CommonModule} from '@angular/common';
+import {PopUpService} from '../../services/pop-up.service';
 
 @Component({
   selector: 'category-card',
@@ -19,7 +20,8 @@ export class CategoryCardComponent implements OnInit {
     backgroundColor: '',
     width: ''
   }
-
+  constructor(private popUpService:PopUpService) {
+  }
   ngOnInit() {
     if (this.category) {
       if (this.category.category === 'Marketing') {
@@ -39,5 +41,8 @@ export class CategoryCardComponent implements OnInit {
         this.categoryStyles.width = '113px';
       }
     }
+  }
+  showPopUp(){
+    this.popUpService.showPopUp.set(true);
   }
 }

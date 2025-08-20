@@ -19,6 +19,7 @@ import {CertificateService} from '../../shared/services/certificate.service';
 import {EventService} from '../../shared/services/event.service';
 import {EventType} from '../../../types/event.type';
 import {EventCardComponent} from '../../shared/components/event-card/event-card.component';
+import {PopUpService} from '../../shared/services/pop-up.service';
 
 @Component({
   selector: 'app-main',
@@ -63,7 +64,8 @@ export class MainComponent implements OnInit, OnDestroy {
   communityShown: boolean = false;
 
   constructor(private headerService: HeaderService, private coursesService: CoursesService, private teamService: TeamService,
-              private postsService: PostsService, private certificateService: CertificateService, private eventService: EventService) {
+              private postsService: PostsService, private certificateService: CertificateService, private eventService: EventService,
+              private popUpService:PopUpService) {
   }
 
   ngOnInit() {
@@ -78,6 +80,9 @@ export class MainComponent implements OnInit, OnDestroy {
     this.headerService.whiteBg.set(true);
   }
 
+  showPopUp(){
+    this.popUpService.showPopUp.set(true);
+  }
   showDescription(clickedBtn: HTMLElement) {
     if (parseInt(clickedBtn.id) === 1) {
       this.tutorsShown = true;

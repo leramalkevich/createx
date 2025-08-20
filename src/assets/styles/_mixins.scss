@@ -50,6 +50,7 @@
   background-clip: border-box;
   width: $width;
   text-decoration: none;
+  text-align: center;
   transition: all .3s ease-in;
   &:hover {
     transform: scale(1.05);
