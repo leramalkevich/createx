@@ -29,22 +29,28 @@ body {
     box-shadow: 0px 30px 24px -10px #9A9CA50D;
     margin: 0 auto;
     position: relative;
+
     .owl-stage-outer {
       .review-item {
         display: flex;
         align-items: flex-start;
+
         .quote-mark {
           margin-right: 30px;
         }
+
         .review-content {
           max-width: 752px;
+
           .review-text {
             font-size: 20px;
             margin-bottom: 24px;
           }
+
           .user-profile {
             display: flex;
             align-items: center;
+
             .user-image {
               width: 72px;
               height: 72px;
@@ -54,12 +60,14 @@ body {
               background-position: center;
               background-size: contain;
             }
+
             .user-info {
               .user-name {
                 font-weight: 700;
                 color: variables.$title-text-color;
                 margin-bottom: 4px;
               }
+
               .user-add {
                 font-size: 14px;
                 color: variables.$author-card-color;
@@ -69,13 +77,16 @@ body {
         }
       }
     }
+
     .owl-nav {
       display: none;
     }
+
     .owl-dots {
       position: absolute;
       bottom: -60px;
       right: calc(43% - 50px);
+
       .owl-dot {
         span {
           width: 30px;
@@ -108,6 +119,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   color: variables.$text-color;
+
   &::placeholder {
     font-family: Lato, sans-serif;
     font-weight: 400;
@@ -126,9 +138,11 @@ input[type="checkbox"] {
   cursor: pointer;
   position: relative;
   background-color: white;
+
   &:checked {
     background-color: variables.$primary-color;
     border-color: variables.$primary-color;
+
     &::before {
       content: '\2713'; /* Checkmark character */
       display: block;
@@ -151,6 +165,7 @@ input[type="checkbox"] {
   display: flex;
   align-items: center;
   justify-content: center;
+
   .container {
     border: 1px solid #E5E8ED;
     border-radius: 4px;
@@ -169,60 +184,101 @@ input[type="checkbox"] {
       align-items: center;
       justify-content: center;
     }
+
     .sign-inner-text {
       text-align: center;
       font-size: 14px;
+
       .title {
         font-weight: 700;
         font-size: 28px;
         color: variables.$title-text-color;
       }
+
       .description {
         color: variables.$author-card-color;
         margin: 24px auto;
         max-width: 390px;
       }
+
       .sign-form {
         max-width: 390px;
         text-align: left;
         padding-left: 48px;
         padding-right: 48px;
+
         .sign-form-input {
           margin-bottom: 20px;
+
           .input {
             width: 390px;
             margin-top: 8px;
             font-size: 14px;
+
             &::placeholder {
               font-size: 14px;
             }
           }
+
+          .password-input {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 390px;
+            border: 1px solid #D7DADD;
+            border-radius: 4px;
+            margin-top: 8px;
+
+            .input {
+              margin-top: 0;
+              border-color: transparent;
+              width: 350px;
+            }
+
+            .password-control {
+              width: 16px;
+              height: 16px;
+              margin-right: 16px;
+
+              svg {
+                width: 100%;
+                height: 100%;
+                fill: variables.$text-color;
+              }
+            }
+          }
+
           &.with-checkbox {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-bottom: 24px;
+
             .sign-checkbox {
               label {
                 display: flex;
                 align-items: center;
               }
             }
+
             .link {
               color: variables.$primary-color;
               cursor: pointer;
             }
           }
         }
+
         .button {
           @include mixins.button-styles(variables.$gradient-color, variables.$white-color, 390px);
           margin-bottom: 24px;
         }
       }
+
       .link-to-sign-block {
         text-align: left;
         margin-bottom: 24px;
         padding: 0 48px;
+
         .link-to-sign {
           color: variables.$primary-color;
           border: none;
@@ -232,34 +288,42 @@ input[type="checkbox"] {
           font-size: 14px;
         }
       }
+
       .line {
         border: 1px solid #E5E8ED;
         width: auto;
       }
+
       .social-links {
         margin-top: 24px;
+
         .text {
           text-align: center;
           color: variables.$author-card-color;
           margin-bottom: 16px;
         }
+
         .social-links-items {
           display: flex;
           align-items: center;
           justify-content: center;
+
           .social-link {
             cursor: pointer;
             width: 20px;
             height: 20px;
             text-decoration: none;
             margin-right: 12px;
+
             &:last-child {
               margin-right: 0;
             }
+
             svg path {
               transition: all .3s ease-in;
               fill: variables.$author-card-color;
             }
+
             &:hover {
               svg path {
                 fill: variables.$primary-color;
