@@ -1,0 +1,21 @@
+<div class="popup" *ngIf="isShown">
+  <div class="container">
+    <div class="popup-close" (click)="hidePopUp()">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="1.93562" y1="2.6499" x2="13.9564" y2="14.6707" stroke="#BEBEBE" stroke-linecap="round"/>
+        <line x1="13.9236" y1="2.62971" x2="1.90277" y2="14.6505" stroke="#BEBEBE" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="popup-inner-text" #innerPopupText>
+      <div class="popup-title">
+        <span>Oops... </span>No need to worry! We're in the process of <span>updating</span>. <br>Be right back soon
+        with new <span>better courses</span> and latest blog posts.
+        <br><br><span class="tuned">Stay tuned!</span>
+      </div>
+      <div class="popup-actions">
+        <button class="button" (click)="hidePopUp()">Got it</button>
+      </div>
+    </div>
+
+  </div>
+</div>
