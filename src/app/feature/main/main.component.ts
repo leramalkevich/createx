@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {HeaderService} from '../../shared/services/header.service';
 import {RouterLink} from '@angular/router';
 import {CourseType} from '../../../types/course.type';
@@ -19,7 +19,6 @@ import {CertificateService} from '../../shared/services/certificate.service';
 import {EventService} from '../../shared/services/event.service';
 import {EventType} from '../../../types/event.type';
 import {EventCardComponent} from '../../shared/components/event-card/event-card.component';
-import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-main',
@@ -27,29 +26,8 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
     SubscribeComponent, ReviewsComponent, CertificateComponent, EventCardComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
-  // animations: [
-  //   trigger('fade', [
-  //     state('visible', style({
-  //       opacity: 1,
-  //       transform:'scale(1)',
-  //       transition: 'opacity 0.3s ease-in, transform 0.3s ease-in',
-  //       // display:'block'
-  //     })),
-  //     state('hidden', style({
-  //       opacity: 0,
-  //       transform: 'scale(0.3)',
-  //       transition: 'all 0.3s ease-in',
-  //       // transition: 'opacity 0.3s ease-in, transform 0.3s ease-in',
-  //       position:'absolute',
-  //       zIndex: 0,
-  //       // display:'none'
-  //     })),
-  //     transition('visible=>hidden', [animate('0.6s ease-in')]),
-  //     transition('hidden=>visible', [animate('0.6s ease-in')])
-  //   ])
-  // ]
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, OnDestroy {
   courses: CourseType[] = [];
   team: TeamMemberType[] = [];
   blogPosts: PostType[] = [];
@@ -95,6 +73,9 @@ export class MainComponent implements OnInit {
     this.blogPosts = this.postsService.getRandomBlogPosts(3);
     this.certificateService.twoColoredBg.set(true);
     this.events = this.eventService.getRandomBlogPosts(3);
+  }
+  ngOnDestroy() {
+    this.headerService.whiteBg.set(true);
   }
 
   showDescription(clickedBtn: HTMLElement) {

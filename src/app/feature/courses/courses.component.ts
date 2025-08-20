@@ -7,6 +7,7 @@ import {CoursesService} from '../../shared/services/courses.service';
 import {CourseType} from '../../../types/course.type';
 import {CommonModule} from '@angular/common';
 import {CourseCardComponent} from '../../shared/components/course-card/course-card.component';
+import {HeaderService} from '../../shared/services/header.service';
 
 @Component({
   selector: 'courses',
@@ -16,9 +17,11 @@ import {CourseCardComponent} from '../../shared/components/course-card/course-ca
 })
 export class CoursesComponent implements OnInit, AfterViewInit {
   courses:CourseType[]=[];
-  constructor(private certificateService:CertificateService, private coursesService: CoursesService) {
+  constructor(private certificateService:CertificateService, private coursesService: CoursesService,
+              private headerService:HeaderService) {
   }
   ngOnInit() {
+    this.headerService.whiteBg.set(true);
     this.certificateService.twoColoredBg.set(false);
     this.courses = this.coursesService.courses();
     this.coursesService.verticalCardView.set(true);
