@@ -1,20 +1,32 @@
-<section class="subscribe-to-blog">
+<section class="subscribe-to-blog" [formGroup]="subscribeForm">
   <div class="container">
-    <div class="subscribe-block">
+    <div class="subscribe-block" #subscribe>
       <div class="subscribe-title">
         Want to get the best articles weekly?
         Subscribe to our newsletter!
       </div>
       <div class="subscribe">
-        <input type="text" id="subscribe" class="subscribe-input email-input">
-        <button class="button">
+        <div class="email-input">
+          <input type="text" id="subscribe" class="subscribe-input" formControlName="email"
+                 [ngStyle]="{'borderColor': subscribeForm.get('email')?.invalid && (subscribeForm.get('email')?.dirty ||
+                 subscribeForm.get('email')?.touched) ? 'red':''}">
+          <div class="error-feedback" *ngIf="(subscribeForm.get('email')?.invalid && (subscribeForm.get('email')?.dirty ||
+          subscribeForm.get('email')?.touched) && subscribeForm.get('email')?.errors?.['email'])">
+            Incorrect email
+          </div>
+        </div>
+        <button class="button" (click)="showPopUp()">
           Subscribe
         </button>
       </div>
       <label for="subscribe" class="input-label">
-        <input type="checkbox">
+        <input type="checkbox" formControlName="agree">
         <span>I agree to receive communications from Createx Online School</span>
       </label>
+      <div class="error-feedback" *ngIf="(subscribeForm.get('agree')?.invalid && (subscribeForm.get('agree')?.dirty || subscribeForm.get('agree')?.touched)
+        && subscribeForm.get('agree')?.errors?.['required'])">
+          Your permission is required
+      </div>
     </div>
   </div>
 </section>

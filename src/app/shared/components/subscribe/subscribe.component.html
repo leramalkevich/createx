@@ -2,9 +2,17 @@
   <div class="container">
     <div class="above-title">Don’t miss anything</div>
     <div class="title">Subscribe to the Createx School announcements</div>
-    <div class="subscribe-block">
-      <input type="text" class="subscribe-input email-input" placeholder="Your working email">
-      <button class="button">Subscribe</button>
+    <div class="subscribe-block" #subscribe [formGroup]="subscribeForm">
+      <div class="email-input">
+        <input type="text" class="subscribe-input" placeholder="Your working email" formControlName="email"
+               [ngStyle]="{'borderColor': subscribeForm.get('email')?.invalid && (subscribeForm.get('email')?.dirty ||
+               subscribeForm.get('email')?.touched) ? 'red':''}">
+        <div class="error-feedback" *ngIf="(subscribeForm.get('email')?.invalid && (subscribeForm.get('email')?.dirty ||
+        subscribeForm.get('email')?.touched) && subscribeForm.get('email')?.errors?.['email'])">
+          Incorrect email
+        </div>
+      </div>
+      <button class="button" (click)="showPopUp()">Subscribe</button>
     </div>
   </div>
 </section>
