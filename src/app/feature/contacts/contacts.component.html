@@ -118,39 +118,82 @@
 
 <section class="form-block">
   <div class="container">
-    <div class="form">
+    <div class="form" [formGroup]="contactForm">
       <div class="form-above-title">Any questions?</div>
       <div class="form-title">Drop us a line</div>
       <div class="data-block">
         <div class="form-input">
-          <label for="firstName">First Name*</label>
-          <input type="text" id="firstName" placeholder="Your first name" class="input subscribe-input">
+          <label for="firstName">
+            First Name
+          <span [ngStyle]="{'color': contactForm.get('firstName')?.invalid && (contactForm.get('firstName')?.dirty || contactForm.get('firstName')?.touched) ? 'red':''}">*</span></label>
+          <input type="text" id="firstName" placeholder="Your first name" class="input subscribe-input" formControlName="firstName"
+          [ngStyle]="{'borderColor': contactForm.get('firstName')?.invalid && (contactForm.get('firstName')?.dirty || contactForm.get('firstName')?.touched) ? 'red':''}">
+          <div *ngIf="(contactForm.get('firstName')?.invalid && (contactForm.get('firstName')?.touched || contactForm.get('firstName')?.dirty))">
+            <div class="error-feedback" *ngIf="contactForm.get('firstName')?.errors?.['required']">
+              This field is required
+            </div>
+            <div class="error-feedback" *ngIf="contactForm.get('firstName')?.errors?.['pattern']">
+              For example, Emma
+            </div>
+          </div>
         </div>
+
         <div class="form-input">
-          <label for="lastName">Last Name*</label>
-          <input type="text" id="lastName" placeholder="Your last name" class="input subscribe-input">
+          <label for="lastName">
+            Last Name
+          <span [ngStyle]="{'color': contactForm.get('lastName')?.invalid && (contactForm.get('lastName')?.dirty || contactForm.get('lastName')?.touched) ? 'red':''}">*</span></label>
+          <input type="text" id="lastName" placeholder="Your last name" class="input subscribe-input" formControlName="lastName"
+                 [ngStyle]="{'borderColor': contactForm.get('lastName')?.invalid && (contactForm.get('lastName')?.dirty || contactForm.get('lastName')?.touched) ? 'red':''}">
+          <div *ngIf="(contactForm.get('lastName')?.invalid && (contactForm.get('lastName')?.touched || contactForm.get('lastName')?.dirty))">
+            <div class="error-feedback" *ngIf="contactForm.get('lastName')?.errors?.['required']">
+              This field is required
+            </div>
+            <div class="error-feedback" *ngIf="contactForm.get('lastName')?.errors?.['pattern']">
+              For example, D'Arcy
+            </div>
+          </div>
         </div>
       </div>
       <div class="data-block">
         <div class="form-input">
-          <label for="email">Email*</label>
-          <input type="text" id="email" placeholder="Your working email" class="input subscribe-input">
+          <label for="email">
+            Email
+          <span [ngStyle]="{'color': contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched) ? 'red':''}">*</span></label>
+          <input type="text" id="email" placeholder="Your working email" class="input subscribe-input" formControlName="email"
+                 [ngStyle]="{'borderColor': contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched) ? 'red':''}">
+          <div *ngIf="(contactForm.get('email')?.invalid && (contactForm.get('email')?.touched || contactForm.get('email')?.dirty))">
+            <div class="error-feedback" *ngIf="contactForm.get('email')?.errors?.['required']">
+              This field is required
+            </div>
+            <div class="error-feedback" *ngIf="contactForm.get('email')?.errors?.['email']">
+              Incorrect email
+            </div>
+          </div>
         </div>
         <div class="form-input">
           <label for="phone">Phone</label>
-          <input type="text" id="phone" placeholder="Your phone number" class="input subscribe-input">
+          <input type="text" id="phone" appNumberOnly placeholder="Your phone number" class="input subscribe-input" formControlName="phone">
         </div>
       </div>
       <div class="data-block message">
-        <label for="message">Message*</label>
-        <textarea id="message" placeholder="Your message" class="input subscribe-input"></textarea>
+        <label for="message">
+          Message
+        <span [ngStyle]="{'color': contactForm.get('message')?.invalid && (contactForm.get('message')?.dirty || contactForm.get('message')?.touched) ? 'red':''}">*</span>
+        </label>
+        <textarea id="message" placeholder="Your message" class="input subscribe-input" formControlName="message"
+                  [ngStyle]="{'borderColor': contactForm.get('message')?.invalid && (contactForm.get('message')?.dirty || contactForm.get('message')?.touched) ? 'red':''}"></textarea>
+        <div *ngIf="(contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || contactForm.get('message')?.dirty))">
+          <div class="error-feedback" *ngIf="contactForm.get('message')?.errors?.['required']">
+            This field is required
+          </div>
+        </div>
       </div>
       <div class="data-block">
         <label for="agree" class="agree">
-          <input type="checkbox" id="agree">
+          <input type="checkbox" id="agree" formControlName="agreeToReceiveCommunications">
           <span>I agree to receive communications from Createx Online School</span>
         </label>
-        <button class="button">Send message</button>
+        <button class="button" (click)="sendMessage()">Send message</button>
       </div>
     </div>
   </div>

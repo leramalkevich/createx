@@ -96,6 +96,7 @@ body {
 }
 
 .subscribe-input {
+  position: relative;
   border: 1px solid #D7DADD;
   border-radius: 4px;
   background-color: variables.$white-color;
@@ -269,4 +270,11 @@ input[type="checkbox"] {
       }
     }
   }
+}
+
+.error-feedback {
+  margin-top: 5px;
+  font-size: 12px;
+  color: red;
+  position: absolute;
 }
