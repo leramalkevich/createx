@@ -27,8 +27,10 @@ export class SubscribeComponent {
   }
 
   showPopUp() {
-    this.popUpService.showPopUp.set(true);
-    this.subscribeForm.reset();
-    this.subscribeForm.markAsUntouched();
+    if (this.subscribeForm.value.email) {
+      this.popUpService.showPopUp.set(true);
+      this.subscribeForm.reset();
+      this.subscribeForm.markAsUntouched();
+    }
   }
 }

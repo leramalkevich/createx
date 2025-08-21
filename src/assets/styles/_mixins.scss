@@ -68,6 +68,12 @@
   &.with-svg {
 
   }
+  &:disabled {
+    cursor: default;
+    &:hover {
+      transform: scale(1);
+    }
+  }
 }
 
 @mixin button-circle-styles() {

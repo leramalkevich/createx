@@ -12,7 +12,7 @@
           Incorrect email
         </div>
       </div>
-      <button class="button" (click)="showPopUp()">Subscribe</button>
+      <button class="button" [disabled]="subscribeForm.invalid" (click)="showPopUp()">Subscribe</button>
     </div>
   </div>
 </section>

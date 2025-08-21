@@ -15,7 +15,7 @@
             Incorrect email
           </div>
         </div>
-        <button class="button" (click)="showPopUp()">
+        <button class="button" [disabled]="subscribeForm.invalid" (click)="showPopUp()">
           Subscribe
         </button>
       </div>

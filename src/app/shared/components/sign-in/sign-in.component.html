@@ -63,7 +63,7 @@
           </div>
           <a class="link">Forgot password?</a>
         </div>
-        <button class="button" (click)="showPopUp()">Sign in</button>
+        <button class="button" [disabled]="signInForm.invalid" (click)="showPopUp()">Sign in</button>
       </div>
       <div class="link-to-sign-block">
         <span>Don't have an account?</span>

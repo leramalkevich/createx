@@ -35,4 +35,7 @@ export class FooterComponent {
       this.subscribeForm.markAsUntouched();
     }
   }
+  showPopUpOnLinkClick(){
+    this.popUpService.showPopUp.set(true);
+  }
 }

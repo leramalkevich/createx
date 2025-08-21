@@ -110,7 +110,7 @@
               </label>
             </div>
           </div>
-          <button class="button" (click)="showPopUp()">Sign up</button>
+          <button class="button" [disabled]="signUpForm.invalid" (click)="showPopUp()">Sign up</button>
         </div>
         <div class="link-to-sign-block">
           <span>Already have an account?</span>
